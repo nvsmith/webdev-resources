@@ -4,18 +4,20 @@
 
 ## Table of Contents
 
--   [Web Development Resources](#web-development-resources)
-    -   [Table of Contents](#table-of-contents)
-    -   [About The Project](#about-the-project)
-    -   [Usage](#usage)
-    -   [Roadmap](#roadmap)
-    -   [License](#license)
-    -   [Contact](#contact)
-    -   [Resource List](#resource-list)
-        -   [CSS](#css)
-        -   [Git](#git)
-        -   [JavaScript](#javascript)
-        -   [Markdown](#markdown)
+- [Web Development Resources](#web-development-resources)
+  - [Table of Contents](#table-of-contents)
+  - [About The Project](#about-the-project)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+  - [License](#license)
+  - [Contact](#contact)
+  - [Resource List](#resource-list)
+    - [CSS](#css)
+    - [Git](#git)
+    - [JavaScript](#javascript)
+      - [React](#react)
+    - [Markdown](#markdown)
+    - [Terminal](#terminal)
 
 <br>
 
@@ -65,6 +67,14 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 1. [Arrays Cheatsheet](JavaScript/arrays-cheatsheet.md)
 2. [JavaScript Notes](JavaScript/javascript-notes.md)
 
+#### React
+
+1. [React Notes](JavaScript/React/react-notes.md)
+
 ### Markdown
 
 1. [Markdown Cheatsheet](Markdown/markdown-cheatsheet.md)
+
+### Terminal
+
+1. [Mac Terminal Cheatsheet](Terminal/mac-terminal-cheatsheet.md)
