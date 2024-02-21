@@ -1,8 +1,10 @@
 # Markdown Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.12
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.17
 
-> VSCode Markdown Preview Shortcut: `⌘K V`
+> VSCode Markdown Preview Shortcut: `⌘K V` (note space).
+>
+> -   After opening Preview, `⌘+Shift+P` and search `Markdown: Toggle Preview Locking` to lock the preview mode on this document. (Otherwise, if you open another Markdown file, the preview window will switch that the new file.)
 
 ## Table of Contents
 
