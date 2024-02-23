@@ -12,6 +12,7 @@
     - [Make A Single Directory](#make-a-single-directory)
     - [Make Multiple Directories](#make-multiple-directories)
     - [Create A File](#create-a-file)
+    - [Create Multiple Files](#create-multiple-files)
     - [Create A Directory \& File Together](#create-a-directory--file-together)
     - [Copy a Directory](#copy-a-directory)
 
@@ -56,6 +57,11 @@ Make nested directories: <br>
 
 Add the extension of the file to the end of the file name, e.g. a text file: <br>
 `touch fileName.txt`
+
+### Create Multiple Files
+
+Separate filenames and their extensions with a space to add to the current directory.
+`touch file1.txt file2.js file3.jpg file4.html`
 
 ### Create A Directory & File Together
 
