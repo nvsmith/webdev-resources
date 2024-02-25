@@ -4,21 +4,23 @@
 
 ## Table Of Contents
 
-- [React Notes](#react-notes)
-  - [Table Of Contents](#table-of-contents)
-  - [About This Document](#about-this-document)
-  - [The JavaScript Ecosystem](#the-javascript-ecosystem)
-  - [Option 1: Install React Automatically With Create React App](#option-1-install-react-automatically-with-create-react-app)
-  - [Option 2: Install React Manually](#option-2-install-react-manually)
-    - [Installation Prerequisites](#installation-prerequisites)
-    - [Initialize Package Manager (NPM)](#initialize-package-manager-npm)
-    - [Installing React Packages \& Dependencies](#installing-react-packages--dependencies)
-    - [Add Files To Your Project](#add-files-to-your-project)
-    - [Update Your Scripts](#update-your-scripts)
-  - [Layout](#layout)
-  - [Name Your React Components Correctly](#name-your-react-components-correctly)
-  - [Organize Your Project](#organize-your-project)
-  - [Uninstall React](#uninstall-react)
+-   [React Notes](#react-notes)
+    -   [Table Of Contents](#table-of-contents)
+    -   [About This Document](#about-this-document)
+    -   [The JavaScript Ecosystem](#the-javascript-ecosystem)
+    -   [Option 1: Install React Automatically With Create React App](#option-1-install-react-automatically-with-create-react-app)
+    -   [Option 2: Install React Manually](#option-2-install-react-manually)
+        -   [Installation Prerequisites](#installation-prerequisites)
+        -   [Initialize Package Manager (NPM)](#initialize-package-manager-npm)
+        -   [Installing React Packages](#installing-react-packages)
+            -   [React Dependencies](#react-dependencies)
+            -   [Dev Dependencies](#dev-dependencies)
+        -   [Add Files To Your Project](#add-files-to-your-project)
+        -   [Update Your Scripts](#update-your-scripts)
+    -   [Layout](#layout)
+    -   [Name Your React Components Correctly](#name-your-react-components-correctly)
+    -   [Organize Your Project](#organize-your-project)
+    -   [Uninstall React](#uninstall-react)
 
 ## About This Document
 
@@ -45,7 +47,7 @@ React requires several things to work properly. Here are the JavaScript tasks th
 
 ## Option 1: Install React Automatically With Create React App
 
-1. Install `node.js` if you don't haven't already.
+1. Install `node.js` if you haven't already.
 2. In your terminal, navigate to the directory where you want to create your project root.
 3. Run the Create React App, replacing "project-name" with your own project:
     1. `npx create-react-app project-name`
@@ -87,7 +89,12 @@ npm init
 yes
 ```
 
-### Installing React Packages & Dependencies
+### Installing React Packages
+
+> -   **dependencies**: packages imported by our application.
+> -   **devDependencies** packages required for development and testing.
+
+#### React Dependencies
 
 ```bash
 # Install React
@@ -95,13 +102,18 @@ npm install --save react
 
 # Install React-DOM
 npm install --save react-dom
-
-# Install Babel & Webpack
-npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin
 ```
 
-> -   **dependencies**: packages imported by our application.
-> -   **devDependencies** packages required for development and testing.
+#### Dev Dependencies
+
+```bash
+# Install Babel & Webpack
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin
+
+# Install URL Loader & File Loader
+# For image rendering on a local server
+npm install --save-dev url-loader file-loader
+```
 
 ### Add Files To Your Project
 
@@ -111,6 +123,7 @@ Add the following templates into the root of your project:
 2. [index.js](root-file-templates/index.js)
 3. [webpack.config.js](root-file-templates/webpack.config.js)
     1. Double check that the `template` and `entry` filepaths to your root **index.html** and **index.js** are correct!
+    2. If your images aren't loading, you may need to add/remove file-loader rules from the configuration file. See [file-loader documentation](https://www.npmjs.com/package/file-loader) for examples.
 
 ### Update Your Scripts
 
@@ -129,7 +142,7 @@ That should be it! Run `npm run start` to execute the script which starts React 
 > Project is running at:<br>
 > Loopback: http://localhost:8080/
 
-Press `Ctrl+C` to stop the webpack-dev-server at any time.
+Press `Ctrl+C` in the terminal to stop the webpack-dev-server at any time.
 
 ## Layout
 
@@ -156,15 +169,15 @@ The village metaphor is a useful way to conceptualize modules in React as the us
 
 Using a village as a framework for structure, here's one way to organize directories & files:
 
--   **myProject**
-    -   **node_modules**
+-   myProject
+    -   node_modules
     -   styles
     -   index.js (Highest component in hierarchy, App - render to DOM)
     -   index.html
     -   package.json
     -   package-lock.json
     -   webpack.config.js
-    -   **components**
+    -   components
         -   **villages**: the entire current page/view that can be toggled on or off, i.e. Landing Page
             -   **neighborhoods**: sections of the view that are composed of blocks, e.g. Header, Footer, Sidebar, etc.
                 -   **blocks**: specific functionality of the UI composed of houses, e.g. Navigation, Call To Action, etc.
