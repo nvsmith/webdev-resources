@@ -28,6 +28,10 @@ module.exports = {
                     loader: "url-loader",
                 },
             },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     plugins: [HtmlWebpackPluginConfig],

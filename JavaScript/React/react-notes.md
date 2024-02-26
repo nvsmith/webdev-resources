@@ -7,9 +7,9 @@
 -   [React Notes](#react-notes)
     -   [Table Of Contents](#table-of-contents)
     -   [About This Document](#about-this-document)
-    -   [The JavaScript Ecosystem](#the-javascript-ecosystem)
     -   [Option 1: Install React Automatically With Create React App](#option-1-install-react-automatically-with-create-react-app)
     -   [Option 2: Install React Manually](#option-2-install-react-manually)
+        -   [Understanding The JavaScript Ecosystem](#understanding-the-javascript-ecosystem)
         -   [Installation Prerequisites](#installation-prerequisites)
         -   [Initialize Package Manager (NPM)](#initialize-package-manager-npm)
         -   [Installing React Packages](#installing-react-packages)
@@ -18,6 +18,7 @@
         -   [Add Files To Your Project](#add-files-to-your-project)
         -   [Update Your Scripts](#update-your-scripts)
     -   [Layout](#layout)
+        -   [Installing React Grid (Optional)](#installing-react-grid-optional)
     -   [Name Your React Components Correctly](#name-your-react-components-correctly)
     -   [Organize Your Project](#organize-your-project)
     -   [Uninstall React](#uninstall-react)
@@ -25,25 +26,6 @@
 ## About This Document
 
 This document is a brain dump for things that I've picked up about the React library. Use at your own risk!
-
-## The JavaScript Ecosystem
-
-React requires several things to work properly. Here are the JavaScript tasks that need to be addressed with their respective tools:
-
-1. Managing packages - npm
-2. Using a module system - ES6
-3. Preprocessing JavaScript - Babel
-4. Bundling everything into a single file for the browser - Webpack
-
-**package**: a directory with at least one file called "package.json" that contains metadata about said package.
-
-**module**: JavaScript code that can be imported/exported for use elsewhere.
-
-**Babel**: a preprocessor that compiles ES6, applied using Webpack.
-
-**Webpack**: a module bundler that ultimately injects a single new file as HTML to be read by the browser.
-
-**Bundling**: taking the top of the code hierarchy (index.js), specifying the preprocessor (Babel), then producing a single file with the final code (Webpack) for the browser to read.
 
 ## Option 1: Install React Automatically With Create React App
 
@@ -62,6 +44,20 @@ For simple projects, you can delete the following:
 After setup is complete, run `npm run start` to execute the script which starts React and allows you to view your project in the browser.
 
 ## Option 2: Install React Manually
+
+### Understanding The JavaScript Ecosystem
+
+React requires several things to work properly. Here are the JavaScript tasks that need to be addressed with their respective tools:
+
+1. Managing packages - npm
+    - **package**: a directory with at least one file called "package.json" that contains metadata about said package.
+2. Using a module system - ES6
+    - **module**: JavaScript code that can be imported/exported for use elsewhere.
+3. Preprocessing JavaScript - Babel
+    - **Babel**: a preprocessor that compiles ES6, applied using Webpack.
+4. Bundling everything into a single file for the browser - Webpack
+    - **Webpack**: a module bundler that ultimately injects a single new file as HTML to be read by the browser.
+    - **Bundling**: using the top of the code hierarchy (index.js), specifying the preprocessor (Babel), then producing a single file with the final code (Webpack) for the browser to read.
 
 ### Installation Prerequisites
 
@@ -113,6 +109,10 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-l
 # Install URL Loader & File Loader
 # For image rendering on a local server
 npm install --save-dev url-loader file-loader
+
+# Install CSS/Style Loader
+npm install --save-dev style-loader css-loader
+
 ```
 
 ### Add Files To Your Project
@@ -149,6 +149,19 @@ Press `Ctrl+C` in the terminal to stop the webpack-dev-server at any time.
 There are several ways you can define layouts for your React App (CSS stylesheets, Bootstrap, React Grid System, etc). Before committing to any framework, determine how your UI can be divided into rows and columns.
 
 > Be careful if you choose to use Bootstrap; it contains JavaScript that may conflict with React.
+
+### Installing React Grid (Optional)
+
+```bash
+# Install React Grid
+npm install --save react-grid-system
+```
+
+Once installed, add the following to your components:
+
+```js
+import { Container, Row, Col } from "react-grid-system";
+```
 
 ## Name Your React Components Correctly
 
