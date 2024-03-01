@@ -4,31 +4,35 @@
 
 ## Table of Contents
 
--   [Git Cheatsheet](#git-cheatsheet)
-    -   [Table of Contents](#table-of-contents)
-    -   [General Notes](#general-notes)
-        -   [Best Practices](#best-practices)
-        -   [Comment Styles](#comment-styles)
-        -   [WordPress Usage](#wordpress-usage)
-    -   [Set Up Version Control](#set-up-version-control)
-        -   [Initialize Local Git Repo](#initialize-local-git-repo)
-        -   [Connect Local Repo to GitHub/Remote](#connect-local-repo-to-githubremote)
-    -   [Remove Version Control](#remove-version-control)
-    -   [Branch \& Code Edits](#branch--code-edits)
-        -   [Rename An Existing Branch](#rename-an-existing-branch)
-        -   [Create A New Branch](#create-a-new-branch)
-        -   [Clone A Repo](#clone-a-repo)
-        -   [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
-            -   [Fetch vs. Pull](#fetch-vs-pull)
-    -   [Merges \& Conflicts](#merges--conflicts)
-        -   [Merging Branches](#merging-branches)
-        -   [Merge Conflicts](#merge-conflicts)
-    -   [Scratch That: Undo Changes \& Delete Branches](#scratch-that-undo-changes--delete-branches)
-        -   [Undo Simple File Edits](#undo-simple-file-edits)
-        -   [Delete Local Branch](#delete-local-branch)
-        -   [Delete Remote Branch](#delete-remote-branch)
-    -   [Rollback The Clock: Revert, Amend, Rebase, Clean](#rollback-the-clock-revert-amend-rebase-clean)
-    -   [Hosting on GitHub Pages](#hosting-on-github-pages)
+- [Git Cheatsheet](#git-cheatsheet)
+  - [Table of Contents](#table-of-contents)
+  - [General Notes](#general-notes)
+    - [Best Practices](#best-practices)
+    - [Comment Styles](#comment-styles)
+    - [WordPress Usage](#wordpress-usage)
+  - [Set Up Version Control](#set-up-version-control)
+    - [Initialize Local Git Repo](#initialize-local-git-repo)
+    - [Connect Local Repo to GitHub/Remote](#connect-local-repo-to-githubremote)
+  - [Remove Version Control](#remove-version-control)
+  - [Branch \& Code Edits](#branch--code-edits)
+    - [Rename An Existing Branch](#rename-an-existing-branch)
+    - [Create A New Branch](#create-a-new-branch)
+    - [Clone A Repo](#clone-a-repo)
+    - [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
+      - [Fetch vs. Pull](#fetch-vs-pull)
+  - [Comparing Branches \& Commits](#comparing-branches--commits)
+    - [Compare Commits To Main](#compare-commits-to-main)
+    - [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
+    - [Compare Unique Commits](#compare-unique-commits)
+  - [Merges \& Conflicts](#merges--conflicts)
+    - [Merging Branches](#merging-branches)
+    - [Merge Conflicts](#merge-conflicts)
+  - [Scratch That: Undo Changes \& Delete Branches](#scratch-that-undo-changes--delete-branches)
+    - [Undo Simple File Edits](#undo-simple-file-edits)
+    - [Delete Local Branch](#delete-local-branch)
+    - [Delete Remote Branch](#delete-remote-branch)
+  - [Rollback The Clock: Revert, Amend, Rebase, Clean](#rollback-the-clock-revert-amend-rebase-clean)
+  - [Hosting on GitHub Pages](#hosting-on-github-pages)
 
 <br>
 
@@ -184,6 +188,46 @@ git fetch -p
 > The -p flag means "prune".
 >
 > -   After fetching, branches which no longer exist on the remote will be deleted.
+
+<br>
+
+## Comparing Branches & Commits
+
+### Compare Commits To Main
+
+```bash
+# Shows if commits are present in devBranch but NOT in main
+git log main..devBranch
+```
+
+### View Behind/Ahead Commit Count
+
+```bash
+# Local branches comparison
+git rev-list --left-right --count main...devBranch
+
+# Remote branches comparison
+git rev-list --left-right --count origin/main...origin/devBranch
+
+# Example Output:
+# 1   3
+# Compared to main, devBranch is 1 behind & 3 ahead
+```
+
+### Compare Unique Commits
+
+```bash
+# Return list of unique commits on each branch
+git rev-list --left-right --pretty=oneline main...devBranch
+
+# Example Output:
+# <1122...unique commit 2 on main
+# <aabb...unique commit 1 on main
+# >1a2b...unique commit 1 on devBranch
+```
+
+> -   `<` SHA points to left branch (in this case, `main`)
+> -   `>` SHA points to right branch (in this case, `devBranch`)
 
 <br>
 
