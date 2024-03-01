@@ -21,7 +21,7 @@
     - [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
       - [Fetch vs. Pull](#fetch-vs-pull)
   - [Comparing Branches \& Commits](#comparing-branches--commits)
-    - [Compare Commits To Main](#compare-commits-to-main)
+    - [Output Unique Commits](#output-unique-commits)
     - [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
     - [Compare Unique Commits](#compare-unique-commits)
   - [Merges \& Conflicts](#merges--conflicts)
@@ -193,7 +193,7 @@ git fetch -p
 
 ## Comparing Branches & Commits
 
-### Compare Commits To Main
+### Output Unique Commits
 
 ```bash
 # Shows if commits are present in devBranch but NOT in main

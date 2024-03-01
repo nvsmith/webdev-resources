@@ -8,6 +8,15 @@
   - [Table of Contents](#table-of-contents)
   - [About This Document](#about-this-document)
   - [Processing \& Searching Text](#processing--searching-text)
+  - [Input Line Navigation](#input-line-navigation)
+    - [Clear Input From Cursor To Beginning](#clear-input-from-cursor-to-beginning)
+    - [Clear Input From Cursor To End](#clear-input-from-cursor-to-end)
+    - [Clear Previous Word](#clear-previous-word)
+    - [Clear Terminal Screen](#clear-terminal-screen)
+    - [Recall Yanked (Cleared) Text](#recall-yanked-cleared-text)
+    - [Move Cursor To Beginning](#move-cursor-to-beginning)
+    - [Move Cursor To End](#move-cursor-to-end)
+    - [Cancel Current Command Line](#cancel-current-command-line)
   - [Manipulating Directories \& Files](#manipulating-directories--files)
     - [Make A Single Directory](#make-a-single-directory)
     - [Make Multiple Directories](#make-multiple-directories)
@@ -36,6 +45,46 @@ There are three main tools to search and process text:
     1. Process field-oriented data.
     2. Perform numeric comparisons/calculations.
     3. Modify data based on calculations.
+
+<br>
+
+## Input Line Navigation
+
+### Clear Input From Cursor To Beginning
+
+`Ctrl`+`U`
+
+### Clear Input From Cursor To End
+
+`Ctrl`+`K`
+
+### Clear Previous Word
+
+`Ctrl` + `W`
+
+### Clear Terminal Screen
+
+`Ctrl` + `L`
+
+### Recall Yanked (Cleared) Text
+
+`Ctrl` + `Y`
+
+### Move Cursor To Beginning
+
+`Ctrl` + `A`
+
+### Move Cursor To End
+
+`Ctrl` + `E`
+
+### Cancel Current Command Line
+
+`Ctrl` + `C`
+
+> Clears the command line regardless of cursor position, but you can't recall anymore.
+
+<br>
 
 ## Manipulating Directories & Files
 
