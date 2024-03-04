@@ -169,7 +169,7 @@ git push origin feature/modal
 
 ![git pull and fetch comparison](https://itknowledgeexchange.techtarget.com/coffee-talk/files/2023/05/gf03.gif "Git Pull vs Git Fetch")
 
-**Source: https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Git-pull-vs-fetch-Whats-the-difference**
+**Source: [TheServerSide](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Git-pull-vs-fetch-Whats-the-difference)**
 
 `fetch`: copies changes to you local git repo.
 
@@ -185,7 +185,7 @@ git push origin feature/modal
 git fetch -p
 ```
 
-> The -p flag means "prune".
+> `-p`: prune.
 >
 > -   After fetching, branches which no longer exist on the remote will be deleted.
 

@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.21
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.04
 
 ## Table Of Contents
 
@@ -22,6 +22,8 @@
     -   [Name Your React Components Correctly](#name-your-react-components-correctly)
     -   [Organize Your Project](#organize-your-project)
     -   [Uninstall React](#uninstall-react)
+    -   [Components \& Props](#components--props)
+        -   [](#)
 
 ## About This Document
 
@@ -210,4 +212,36 @@ npm uninstall react-dom
 
 # Delete the package files
 rm package.json package-lock.json
+```
+
+## Components & Props
+
+###
+
+-   Components are _defined_ in their export file and _used_ when they are imported.
+
+-   Props are _defined_ where the component is used and _used_ where the component is defined.
+
+<br>
+
+```js
+// Define/Export Component & Use Prop
+class Title extends React.Component {
+    render() {
+        return <h2 className="welcome">{this.props.title}</h2>;
+    }
+}
+
+export default Title;
+```
+
+```js
+// Use/Import Component & Define Prop
+import Title from "./Title";
+
+class Page extends React.Component {
+    render() {
+        return <Title title={"Shop Now"} />;
+    }
+}
 ```

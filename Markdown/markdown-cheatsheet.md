@@ -1,6 +1,6 @@
 # Markdown Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.17
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.04
 
 > VSCode Markdown Preview Shortcut: `⌘K V` (note space).
 >
@@ -11,12 +11,12 @@
 -   [Markdown Cheatsheet](#markdown-cheatsheet)
     -   [Table of Contents](#table-of-contents)
     -   [About This Document](#about-this-document)
--   [h1 heading](#h1-heading)
-    -   [h2 heading](#h2-heading)
-        -   [h3 heading](#h3-heading)
-            -   [h4 heading](#h4-heading)
-                -   [h5 heading](#h5-heading)
-                    -   [h6 heading](#h6-heading)
+-   [# h1 heading](#-h1-heading)
+    -   [## h2 heading](#-h2-heading)
+        -   [### h3 heading](#-h3-heading)
+            -   [#### h4 heading](#-h4-heading)
+                -   [##### h5 heading](#-h5-heading)
+                    -   [###### h6 heading](#-h6-heading)
     -   [Text Elements](#text-elements)
         -   [Blockquotes](#blockquotes)
     -   [Typographic Replacements](#typographic-replacements)
@@ -45,17 +45,17 @@ This is a quick reference guide for the most common Markdown syntax you'll need 
 
 <br>
 
-# h1 heading
+# \# h1 heading
 
-## h2 heading
+## \## h2 heading
 
-### h3 heading
+### \### h3 heading
 
-#### h4 heading
+#### \#### h4 heading
 
-##### h5 heading
+##### \##### h5 heading
 
-###### h6 heading
+###### \###### h6 heading
 
 <br>
 
@@ -63,31 +63,31 @@ This is a quick reference guide for the most common Markdown syntax you'll need 
 
 Paragraphs are the default. No special tags required for this magic!
 
--   **Bold Text** or **Bold Text**
--   _Italic Text_ or _Italic Text_
--   <u>Underlined Text</u>
--   ~~Strikethrough~~
+-   \*\*Bold Text\*\* = **Bold Text**
+-   \_Italic Text\_ = _Italic Text_
+-   \<u>Underlined Text\</u> = <u>Underlined Text</u>
+-   \~~Strikethrough Text\~~ = ~~Strikethrough Text~~
 
 ### Blockquotes
 
 Blockquotes can be nested:
 
-> Level 1 `>`
+> \> Level 1
 >
-> > Level 2 `> >`
+> > \> > Level 2
 > >
-> > > Level 3 `> > >`
+> > > \> > > Level 3
 
 <br>
 
 ## Typographic Replacements
 
-Remove the spaces inside the parentheses to these elements replaced:
+Remove the spaces inside the parentheses of these elements:
 
--   ( c ) => (c)
--   ( r ) => (r)
--   ( tm ) => (tm)
--   ( p ) => (p)
+-   Copyright ( c ) = (c)
+-   Registered Trademark ( r ) = (r)
+-   Unregistered Trademark ( tm ) = (tm)
+-   Section/Silcrow ( p ) = (p)
 
 To see these replacements in your preview window in VSCode, you need to change the default settings:
 
