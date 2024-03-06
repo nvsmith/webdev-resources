@@ -1,35 +1,37 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.04
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.06
 
 ## Table Of Contents
 
 -   [React Notes](#react-notes)
     -   [Table Of Contents](#table-of-contents)
     -   [About This Document](#about-this-document)
-    -   [Option 1: Install React Automatically With Create React App](#option-1-install-react-automatically-with-create-react-app)
-    -   [Option 2: Install React Manually](#option-2-install-react-manually)
-        -   [Understanding The JavaScript Ecosystem](#understanding-the-javascript-ecosystem)
-        -   [Installation Prerequisites](#installation-prerequisites)
-        -   [Initialize Package Manager (NPM)](#initialize-package-manager-npm)
-        -   [Installing React Packages](#installing-react-packages)
-            -   [React Dependencies](#react-dependencies)
-            -   [Dev Dependencies](#dev-dependencies)
-        -   [Add Files To Your Project](#add-files-to-your-project)
-        -   [Update Your Scripts](#update-your-scripts)
-    -   [Layout](#layout)
+    -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+    -   [Option B: Installing React Manually](#option-b-installing-react-manually)
+        -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
+        -   [2. Install Prerequisites](#2-install-prerequisites)
+        -   [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
+        -   [4. Install React Packages](#4-install-react-packages)
+            -   [Install React Dependencies](#install-react-dependencies)
+            -   [Install Dev Dependencies](#install-dev-dependencies)
+        -   [5. Add Files To Your Project](#5-add-files-to-your-project)
+        -   [6. Update Your Scripts](#6-update-your-scripts)
+        -   [7. Execute Your Scripts](#7-execute-your-scripts)
+    -   [Uninstalling React](#uninstalling-react)
+    -   [UI Layout](#ui-layout)
         -   [Installing React Grid (Optional)](#installing-react-grid-optional)
-    -   [Name Your React Components Correctly](#name-your-react-components-correctly)
-    -   [Organize Your Project](#organize-your-project)
-    -   [Uninstall React](#uninstall-react)
+    -   [Naming React Components](#naming-react-components)
+    -   [Organizing Your Project](#organizing-your-project)
     -   [Components \& Props](#components--props)
-        -   [](#)
 
 ## About This Document
 
 This document is a brain dump for things that I've picked up about the React library. Use at your own risk!
 
-## Option 1: Install React Automatically With Create React App
+## Option A: Installing React Automatically
+
+Use the **Create React App** to spin up a React application quickly.
 
 1. Install `node.js` if you haven't already.
 2. In your terminal, navigate to the directory where you want to create your project root.
@@ -45,9 +47,9 @@ For simple projects, you can delete the following:
 
 After setup is complete, run `npm run start` to execute the script which starts React and allows you to view your project in the browser.
 
-## Option 2: Install React Manually
+## Option B: Installing React Manually
 
-### Understanding The JavaScript Ecosystem
+### 1. Understand The JavaScript Ecosystem
 
 React requires several things to work properly. Here are the JavaScript tasks that need to be addressed with their respective tools:
 
@@ -61,12 +63,12 @@ React requires several things to work properly. Here are the JavaScript tasks th
     - **Webpack**: a module bundler that ultimately injects a single new file as HTML to be read by the browser.
     - **Bundling**: using the top of the code hierarchy (index.js), specifying the preprocessor (Babel), then producing a single file with the final code (Webpack) for the browser to read.
 
-### Installation Prerequisites
+### 2. Install Prerequisites
 
 1. [Node.js](https://nodejs.org/en/)
 2. [VSCode](https://code.visualstudio.com/) or other text editor.
 
-### Initialize Package Manager (NPM)
+### 3. Initialize Package Manager (NPM)
 
 In your terminal, create the root directory for your project **before** initializing NPM.
 
@@ -87,12 +89,14 @@ npm init
 yes
 ```
 
-### Installing React Packages
+### 4. Install React Packages
+
+There are two types of packages you need to install:
 
 > -   **dependencies**: packages imported by our application.
 > -   **devDependencies** packages required for development and testing.
 
-#### React Dependencies
+#### Install React Dependencies
 
 ```bash
 # Install React
@@ -102,7 +106,7 @@ npm install --save react
 npm install --save react-dom
 ```
 
-#### Dev Dependencies
+#### Install Dev Dependencies
 
 ```bash
 # Install Babel & Webpack
@@ -117,7 +121,7 @@ npm install --save-dev style-loader css-loader
 
 ```
 
-### Add Files To Your Project
+### 5. Add Files To Your Project
 
 Add the following templates into the root of your project:
 
@@ -127,9 +131,9 @@ Add the following templates into the root of your project:
     1. Double check that the `template` and `entry` filepaths to your root **index.html** and **index.js** are correct!
     2. If your images aren't loading, you may need to add/remove file-loader rules from the configuration file. See [file-loader documentation](https://www.npmjs.com/package/file-loader) for examples.
 
-### Update Your Scripts
+### 6. Update Your Scripts
 
-Open your **package.json** file and update your scripts:
+Open your **package.json** file and update your scripts like so:
 
 ```json
 "scripts": {
@@ -139,14 +143,34 @@ Open your **package.json** file and update your scripts:
 
 This will enable you to execute the webpack-dev-server and allow for live reloading of changes in your default web browser.
 
-That should be it! Run `npm run start` to execute the script which starts React and allows you to view your project in the browser. You should see a message similar to this in your terminal:
+That should be it for installation!
+
+### 7. Execute Your Scripts
+
+Run `npm run start` to execute the script which starts React and allows you to view your project in the browser. You should see a message similar to this in your terminal:
 
 > Project is running at:<br>
 > Loopback: http://localhost:8080/
 
-Press `Ctrl+C` in the terminal to stop the webpack-dev-server at any time.
+Open a second terminal window for any development needs and allow Node to run in the background in the first window. Press `Ctrl+C` in the terminal to stop the webpack-dev-server at any time.
 
-## Layout
+## Uninstalling React
+
+```bash
+# List the React installed versions and dependencies
+npm list react
+
+# Uninstall React:
+npm uninstall react
+
+# Uninstall ReactDOM
+npm uninstall react-dom
+
+# Delete the package files
+rm package.json package-lock.json
+```
+
+## UI Layout
 
 There are several ways you can define layouts for your React App (CSS stylesheets, Bootstrap, React Grid System, etc). Before committing to any framework, determine how your UI can be divided into rows and columns.
 
@@ -165,7 +189,7 @@ Once installed, add the following to your components:
 import { Container, Row, Col } from "react-grid-system";
 ```
 
-## Name Your React Components Correctly
+## Naming React Components
 
 1. Use PascalCase when naming components.
 2. Use full words rather than abbreviations.
@@ -178,7 +202,7 @@ import { Container, Row, Col } from "react-grid-system";
         2. Example2.css
 4. Prefix High-Order components with "with": `const withAuth = (Component)...`
 
-## Organize Your Project
+## Organizing Your Project
 
 The village metaphor is a useful way to conceptualize modules in React as the user interface, made up of hierarchical files and functionality that are imported and exported throughout the app.
 
@@ -198,50 +222,57 @@ Using a village as a framework for structure, here's one way to organize directo
                 -   **blocks**: specific functionality of the UI composed of houses, e.g. Navigation, Call To Action, etc.
                     -   **houses**: the basic building blocks of the UI, sometimes combined into a block (multiple components with a singular purpose) and sometimes stand-alone:
 
-## Uninstall React
-
-```bash
-# List the React installed versions and dependencies
-npm list react
-
-# Uninstall React:
-npm uninstall react
-
-# Uninstall ReactDOM
-npm uninstall react-dom
-
-# Delete the package files
-rm package.json package-lock.json
-```
-
 ## Components & Props
 
-###
+Components are _defined_ where exported and _used_ where imported.
 
--   Components are _defined_ in their export file and _used_ when they are imported.
+Props are _defined_ once, at the highest view (often but not necessarily where the Component is used). But they need to be made available down the entire Component hierarchy; they are passed down every nested file until they are _used_ where the Component is defined.
 
--   Props are _defined_ where the component is used and _used_ where the component is defined.
+-   Props are _defined_ where the component is used.
+-   Props are _used_ where the component is defined.
+-   Props are _passed_ along the entire Component chain.
 
-<br>
+For an example Title component, if your nested directories were: Page>Header>Title, your component/props would look like the following:
 
 ```js
-// Define/Export Component & Use Prop
+// Page.js
+import Header from "./Page/Header"
+
+class Page extends React.Component {
+    render() {
+        // Defines title prop
+        return <Header title="Hello, World!"/>;
+    }
+}
+
+export default Page;
+
+// Header.js
+import Title from "./Page/Header/Title"
+// Uses  Title component
+class Header extends React.Component {
+    render() {
+        // Passes title prop
+        return <Title title={this.props.title}/>;
+
+
+        /* Alternatively, you could define the prop here if you didn't want to define it in the Header, but this would make your Title less flexible: */
+
+        // return <Title title="Hello, World!"/>;
+
+
+    }
+}
+
+export default Header;
+
+// Title.js
 class Title extends React.Component {
     render() {
-        return <h2 className="welcome">{this.props.title}</h2>;
+        // Uses title prop
+        return <h1 className="blue">{this.props.title}</h1>;
     }
 }
 
 export default Title;
-```
-
-```js
-// Use/Import Component & Define Prop
-import Title from "./Title";
-
-class Page extends React.Component {
-    render() {
-        return <Title title={"Shop Now"} />;
-    }
-}
 ```
