@@ -1,6 +1,6 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.11
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.10
 
 ## Table of Contents
 
@@ -10,11 +10,12 @@
     - [Best Practices](#best-practices)
     - [Comment Styles](#comment-styles)
     - [WordPress Usage](#wordpress-usage)
-  - [Set Up Version Control](#set-up-version-control)
+  - [Git Installation Or Upgrading](#git-installation-or-upgrading)
+  - [Version Control Configuration](#version-control-configuration)
     - [Initialize Local Git Repo](#initialize-local-git-repo)
-    - [Connect Local Repo to GitHub/Remote](#connect-local-repo-to-githubremote)
-  - [Remove Version Control](#remove-version-control)
-  - [Branch \& Code Edits](#branch--code-edits)
+    - [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
+  - [Version Control Removal](#version-control-removal)
+  - [Creating \& Modifying Branches](#creating--modifying-branches)
     - [Rename An Existing Branch](#rename-an-existing-branch)
     - [Create A New Branch](#create-a-new-branch)
     - [Clone A Repo](#clone-a-repo)
@@ -27,23 +28,24 @@
   - [Merges \& Conflicts](#merges--conflicts)
     - [Merging Branches](#merging-branches)
     - [Merge Conflicts](#merge-conflicts)
-  - [Scratch That: Undo Changes \& Delete Branches](#scratch-that-undo-changes--delete-branches)
+  - [Scratch That: Reversing Changes \& Deleting Branches](#scratch-that-reversing-changes--deleting-branches)
     - [Undo Simple File Edits](#undo-simple-file-edits)
     - [Delete Local Branch](#delete-local-branch)
     - [Delete Remote Branch](#delete-remote-branch)
-  - [Rollback The Clock: Revert, Amend, Rebase, Clean](#rollback-the-clock-revert-amend-rebase-clean)
+  - [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
   - [Hosting on GitHub Pages](#hosting-on-github-pages)
 
 <br>
 
 ## General Notes
 
--   **main** and **master** are synonymous. This guide will use **main** to refer to the main branch (or trunk) of the development chain.
+In Git branching nomenclature, **main** and **master** are synonymous. This guide will use **main** to refer to the main/master branch (or trunk) of the development chain.
 
 ### Best Practices
 
--   DO NOT edit the **main** branch directly. Always checkout a development branch for editing/testing.
--   Once your code has been vetted, checkout your **main** branch and merge in your development.
+-   ❌ Don't edit the **main** branch directly.
+-   ✅ Always checkout a development branch before working on any code.
+    -   Once your code has been vetted, checkout your **main** branch and merge in your development branch.
 
 ### Comment Styles
 
@@ -53,11 +55,40 @@
 
 ### WordPress Usage
 
--   Whether you are using Git or SFTP to deploy changes, the last step is to refresh your database. Settings or content that you add/modify are stored in your database. (E.g., custom post types, custom fields, references to images, etc.)
+Whether you are using Git or SFTP to deploy changes, the last step is to refresh your database. Settings or content that you add/modify are stored in your database. (E.g., custom post types, custom fields, references to images, etc.)
 
 <br>
 
-## Set Up Version Control
+## Git Installation Or Upgrading
+
+You may already have Apple Git running on your machine. If you run `git --version` and are returned something like "`git version 2.24.3 (Apple Git-128)`" and then install Git with Homebrew, your machine will have two different versions of Git at the following locations:
+
+1. Apple version: /usr/bin/git
+2. Open source (Homebrew installation): /usr/local/bin/git
+
+Updating the PATH variable and overwriting any symlinks as shown below will make your machine use the `git` command default to the open source version of Git. Using Homebrew will make it easier to update (i.e. upgrade) Git in the future.
+
+```bash
+# Iterate through all Git executables and display locations/versions
+for i in $(which -a git); do echo -n "${i}:  "; ${i} --version; done
+
+# Install or upgrade git with Homebrew package manager
+brew install git
+brew upgrade git
+
+# Update the PATH variable to the Homebrew install
+export PATH=/usr/local/bin:$PATH
+
+# Check that your git command is linked to the updated Homebrew version you installed
+git --version
+
+# If necessary, overwrite any existing symlinks to the installed version of git
+brew link --overwrite git
+```
+
+<br>
+
+## Version Control Configuration
 
 ### Initialize Local Git Repo
 
@@ -78,7 +109,7 @@ git add . && git commit -m "Initial commit"
 git status
 ```
 
-### Connect Local Repo to GitHub/Remote
+### Connect Local Repo To GitHub (Or A Remote Server)
 
 ```bash
 # Check for existing remote repos
@@ -108,9 +139,11 @@ View more about Remotes at [Git Basics - Working with Remotes](https://git-scm.c
 
 <br>
 
-## Remove Version Control
+## Version Control Removal
 
-To remove Git from a project, you can simply delete the _.git_ directory in the root of your project. Be careful; this will permanently remove the version control history and configurations.
+To remove Git from a project, you can simply delete the _.git_ directory in the root of your project.
+
+⛔️ Caution! This will permanently remove the version control history and configurations.
 
 ```bash
 # Navigate to project directory
@@ -131,7 +164,7 @@ rm .gitignore
 
 <br>
 
-## Branch & Code Edits
+## Creating & Modifying Branches
 
 ### Rename An Existing Branch
 
@@ -284,7 +317,7 @@ git push origin main
 
 <br>
 
-## Scratch That: Undo Changes & Delete Branches
+## Scratch That: Reversing Changes & Deleting Branches
 
 ### Undo Simple File Edits
 
@@ -322,7 +355,7 @@ git push origin :remoteBranchName
 
 <br>
 
-## Rollback The Clock: Revert, Amend, Rebase, Clean
+## Rolling Back The Clock: Revert, Amend, Rebase, Clean
 
 ???
 

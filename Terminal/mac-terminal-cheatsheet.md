@@ -1,6 +1,6 @@
 # Mac Terminal Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.17
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.10
 
 ## Table of Contents
 
@@ -9,12 +9,12 @@
   - [About This Document](#about-this-document)
   - [Common Mac Keyboard Symbols](#common-mac-keyboard-symbols)
   - [Processing \& Searching Text](#processing--searching-text)
-  - [Input Line Navigation](#input-line-navigation)
+  - [Command Line Navigation](#command-line-navigation)
     - [Move Cursor To Beginning Of Input](#move-cursor-to-beginning-of-input)
     - [Move Cursor To End Of Input](#move-cursor-to-end-of-input)
     - [Move Backward One Word](#move-backward-one-word)
     - [Move Forward One Word](#move-forward-one-word)
-  - [Input Line Manipulation](#input-line-manipulation)
+  - [Input Manipulation](#input-manipulation)
     - [Clear Entire Input](#clear-entire-input)
     - [Clear Entire Input After Cursor](#clear-entire-input-after-cursor)
     - [Clear Previous Word](#clear-previous-word)
@@ -30,6 +30,13 @@
     - [Create Multiple Files](#create-multiple-files)
     - [Create A Directory \& File Together](#create-a-directory--file-together)
     - [Copy a Directory](#copy-a-directory)
+  - [Admin Privileges](#admin-privileges)
+    - [Run Commands As Superuser](#run-commands-as-superuser)
+    - [Run A Shell As Superuser](#run-a-shell-as-superuser)
+  - [Computer Shutdown, Restart, Sleep](#computer-shutdown-restart-sleep)
+    - [Shutdown Immediately](#shutdown-immediately)
+    - [Shutdown In 10 Minutes](#shutdown-in-10-minutes)
+    - [Schedule Shutdown](#schedule-shutdown)
 
 <br>
 
@@ -37,8 +44,9 @@
 
 This cheatsheet is for quick reference to common commands for the Mac terminal (with significant carryover to Linux as well).
 
-> -   Assume Bash/Zsh shells unless specified otherwise.
-> -   Assume that multi-key commands written with the `+` symbol are chords (key combinations in sequence). **Don't actually type the `+` sign unless instructed.**
+-   Assume Bash/Zsh shells unless specified otherwise.
+-   Assume that multi-key commands written with the `+` symbol are chords (key combinations in sequence). **Don't actually type the `+` sign unless instructed.**
+-   `&&`: chains commands together (if the preceding command succeeds).
 
 <br>
 
@@ -64,7 +72,7 @@ There are three main tools to search and process text:
 
 <br>
 
-## Input Line Navigation
+## Command Line Navigation
 
 ### Move Cursor To Beginning Of Input
 
@@ -84,7 +92,7 @@ There are three main tools to search and process text:
 
 <br>
 
-## Input Line Manipulation
+## Input Manipulation
 
 All of the following _Clear_ commands will "copy" the cleared text and make it available to yank (paste), except for the `Ctrl + C` signal interrupter.
 
@@ -152,8 +160,52 @@ This terminates execution of the process and wipes the command line regardless o
 
 `mkdir folderName && touch folderName/fileName.txt`
 
--   `&&`: chain commands together (if the preceding command succeeds).
-
 ### Copy a Directory
 
 `cp -r sourceFolder destinationFolder`
+
+<br>
+
+## Admin Privileges
+
+Executing some commands will require admin (superuser) privileges.
+
+-   `sudo`: superuser do.
+    -   Requires your system password to execute.
+
+### Run Commands As Superuser
+
+Prepend `sudo` to any command.
+
+### Run A Shell As Superuser
+
+`sudo -s`
+
+-   `-s`: shell.
+    -   ⛔️ This option will open a new shell session with superuser privileges so you don't have to prepend everything with `sudo`.
+
+<br>
+
+## Computer Shutdown, Restart, Sleep
+
+Modifying system power will likely require `sudo` permissions.
+
+Use the following options with any of the **shutdown** commands below:
+
+-   `-h`: halt (shut down/power off)
+-   `-r`: reboot (restart)
+-   `-s`: sleep
+
+### Shutdown Immediately
+
+`sudo shutdown -h now`
+
+### Shutdown In 10 Minutes
+
+`sudo shutdown -h +10`
+
+### Schedule Shutdown
+
+Use 24-hour (hh:mm) time to schedule a power off.
+
+`sudo shutdown -h 22:30`
