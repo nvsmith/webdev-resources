@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.06
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.14
 
 ## Table Of Contents
 
@@ -27,6 +27,11 @@
     -   [Organizing Your Project](#organizing-your-project)
     -   [Lifecycle Methods](#lifecycle-methods)
     -   [Components \& Props](#components--props)
+        -   [Presentational \& Container Components](#presentational--container-components)
+            -   [Defining Presentational Components](#defining-presentational-components)
+    -   [Starting A Greenfield Project](#starting-a-greenfield-project)
+        -   [Dividing The UI Into Components](#dividing-the-ui-into-components)
+        -   [Coding A Static UI](#coding-a-static-ui)
 
 ## About This Document
 
@@ -257,12 +262,32 @@ Using a village as a framework for structure, here's one way to organize directo
 
 There are three phases to a React components, which you can think of as the birth, life, and death of a component:
 
-1. Mounting: when the component first renders in the view.
+1. Mounting: after the component renders in the view.
     - e.g. fetching data
 2. Updating: when the component updates the UI.
     - e.g. saving user input from a form
 3. Unmounting: when the component's DOM elements are to be removed from the view.
     - e.g. cancel a running timer
+
+For example, to save data between sessions:
+
+```js
+// 1. Save state to the browser's storage.
+componentDidUpdate() {
+   const stateString = JSON.stringify(this.state);
+   localStorage.setItem("stateString", stateString);
+}
+
+// 2. Fetch data when UI is reopened.
+componentDidMount() {
+    const stateString = localStorage.getItem("stateString");
+    // 3. Set state to the previous session's value.
+    if (stateString) {
+      const savedState = JSON.parse(stateString);
+      this.setState(savedState);
+    }
+}
+```
 
 <br>
 
@@ -317,3 +342,44 @@ class Title extends React.Component {
 
 export default Title;
 ```
+
+### Presentational & Container Components
+
+-   **Separation of Conerns (SoC)**: the process of dividing code into specific, singular, and well-defined tasks.
+-   **Presentational Components**: components for how the UI looks; render logic.
+    -   Receive data and callbacks via props, then use props to produce JSX.
+-   **Container Components** : components for data organization and usage; business logic.
+    -   Provide data for updating data models.
+
+#### Defining Presentational Components
+
+1. Break down a UI into its separate components, like this example with Flipboard:
+
+![Decomposing a UI](../../Images/flipboard-break.png)
+_Source: “Skillcrush - Module 11.2”_
+
+2. Examine the code and make sure each component is responsible for only **one** part of the UI.
+3. Separate all component code into individual modules (Presentational Components).
+4. Import Presentational Components to tie everything together.
+5. Render Presentational Components with props from the Container Component. For example:
+    - Page (Container Component) ➡️ Props.ArticlesList ➡️ ArticlesList (Presentational Component)
+
+<br>
+
+## Starting A Greenfield Project
+
+There are two main preparatory phases of a greenfield project: dividing the UI into its disparate components and coding a static version of the UI.
+
+-   **greenfield project**: a brand new project built from scratch.
+
+### Dividing The UI Into Components
+
+1. Wireframe the UI.
+2. Identify & name the presentational components (appearance rendering).
+3. Identify & name the container components (data handling).
+
+### Coding A Static UI
+
+1. Code a single React component with the JSX required to render the UI.
+    - Don't worry about data management or dynamic interactions.
+2. Separate out the JSX into separate components.
