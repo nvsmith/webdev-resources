@@ -1,37 +1,38 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.14
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.15
 
 ## Table Of Contents
 
--   [React Notes](#react-notes)
-    -   [Table Of Contents](#table-of-contents)
-    -   [About This Document](#about-this-document)
-    -   [Quick Concepts](#quick-concepts)
-    -   [Installing React](#installing-react)
-        -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
-        -   [Option B: Installing React Manually](#option-b-installing-react-manually)
-            -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
-            -   [2. Install Prerequisites](#2-install-prerequisites)
-            -   [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
-            -   [4. Install React Packages](#4-install-react-packages)
-                -   [Install React Dependencies](#install-react-dependencies)
-                -   [Install Dev Dependencies](#install-dev-dependencies)
-            -   [5. Add Files To Your Project](#5-add-files-to-your-project)
-            -   [6. Update Your Scripts](#6-update-your-scripts)
-            -   [7. Execute Your Scripts](#7-execute-your-scripts)
-    -   [Uninstalling React](#uninstalling-react)
-    -   [UI Layout](#ui-layout)
-        -   [Installing React Grid (Optional)](#installing-react-grid-optional)
-    -   [Naming React Components](#naming-react-components)
-    -   [Organizing Your Project](#organizing-your-project)
-    -   [Lifecycle Methods](#lifecycle-methods)
-    -   [Components \& Props](#components--props)
-        -   [Presentational \& Container Components](#presentational--container-components)
-            -   [Defining Presentational Components](#defining-presentational-components)
-    -   [Starting A Greenfield Project](#starting-a-greenfield-project)
-        -   [Dividing The UI Into Components](#dividing-the-ui-into-components)
-        -   [Coding A Static UI](#coding-a-static-ui)
+- [React Notes](#react-notes)
+  - [Table Of Contents](#table-of-contents)
+  - [About This Document](#about-this-document)
+  - [Quick Concepts](#quick-concepts)
+  - [Installing React](#installing-react)
+    - [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+    - [Option B: Installing React Manually](#option-b-installing-react-manually)
+      - [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
+      - [2. Install Prerequisites](#2-install-prerequisites)
+      - [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
+      - [4. Install React Packages](#4-install-react-packages)
+        - [Install React Dependencies](#install-react-dependencies)
+        - [Install Dev Dependencies](#install-dev-dependencies)
+      - [5. Add Files To Your Project](#5-add-files-to-your-project)
+      - [6. Update Your Scripts](#6-update-your-scripts)
+      - [7. Execute Your Scripts](#7-execute-your-scripts)
+  - [Uninstalling React](#uninstalling-react)
+  - [UI Layout](#ui-layout)
+    - [Installing React Grid (Optional)](#installing-react-grid-optional)
+  - [Naming React Components](#naming-react-components)
+  - [Organizing Your Project](#organizing-your-project)
+  - [Lifecycle Methods](#lifecycle-methods)
+  - [Components \& Props](#components--props)
+    - [Presentational \& Container Components](#presentational--container-components)
+      - [Defining Presentational Components](#defining-presentational-components)
+  - [Starting A Greenfield Project](#starting-a-greenfield-project)
+    - [1. Dividing The UI Into Components](#1-dividing-the-ui-into-components)
+    - [2. Coding A Static UI](#2-coding-a-static-ui)
+    - [3. Organizing Data Flow](#3-organizing-data-flow)
 
 ## About This Document
 
@@ -48,6 +49,12 @@ Here are the fundamental concepts you'll need to build/maintain React apps:
 1. Components
 2. ReactDOM
 3. Class vs Functional Components
+
+    - ❌ Don't use class components (deprecated).
+    - ✅ Use functional components.
+        - State management is decoupled with function components (cleaner setup/inheritance).
+        - Libraries use hooks; classes won't be compatible.
+
 4. JSX
 5. State
 6. Event Handling
@@ -356,7 +363,7 @@ export default Title;
 1. Break down a UI into its separate components, like this example with Flipboard:
 
 ![Decomposing a UI](../../Images/flipboard-break.png)
-_Source: “Skillcrush - Module 11.2”_
+_Source: “Skillcrush - Introduction to JavaScript React - Module 11.2”_
 
 2. Examine the code and make sure each component is responsible for only **one** part of the UI.
 3. Separate all component code into individual modules (Presentational Components).
@@ -368,18 +375,35 @@ _Source: “Skillcrush - Module 11.2”_
 
 ## Starting A Greenfield Project
 
-There are two main preparatory phases of a greenfield project: dividing the UI into its disparate components and coding a static version of the UI.
+There are several phases of a greenfield project that you should complete in the following order: dividing the UI into its disparate components, coding a static version of the UI, and organizing the data flow.
 
 -   **greenfield project**: a brand new project built from scratch.
 
-### Dividing The UI Into Components
+### 1. Dividing The UI Into Components
 
 1. Wireframe the UI.
 2. Identify & name the presentational components (appearance rendering).
 3. Identify & name the container components (data handling).
 
-### Coding A Static UI
+![Divide the UI](../../Images/stickynotes-wireframe.png)
+_Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
+
+### 2. Coding A Static UI
 
 1. Code a single React component with the JSX required to render the UI.
-    - Don't worry about data management or dynamic interactions.
+    - Don't worry about data management or dynamic interactions yet.
 2. Separate out the JSX into separate components.
+    1. Export these child components and import them into their appropriate parent components.
+
+### 3. Organizing Data Flow
+
+-   **data flow**: the process by which the UI handles data, including:
+    -   where state is managed.
+    -   how references to data are passed as props down the component tree.
+
+1. Determine what will change in the UI.
+    - What will change with interaction?
+    - What will change with input?
+2. Choose a data model (e.g. string, array, object, etc.) appropriate for the dynamic content.
+3. Assign data management within a container component (e.g. Page or App or some high-level view).
+4. Swap in variables (state/props) to replace static values.
