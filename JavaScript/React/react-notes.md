@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.15
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.18
 
 ## Table Of Contents
 
@@ -30,9 +30,10 @@
     - [Presentational \& Container Components](#presentational--container-components)
       - [Defining Presentational Components](#defining-presentational-components)
   - [Starting A Greenfield Project](#starting-a-greenfield-project)
-    - [1. Dividing The UI Into Components](#1-dividing-the-ui-into-components)
-    - [2. Coding A Static UI](#2-coding-a-static-ui)
-    - [3. Organizing Data Flow](#3-organizing-data-flow)
+    - [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
+    - [II. Coding A Static UI](#ii-coding-a-static-ui)
+    - [III. Organizing Data Flow](#iii-organizing-data-flow)
+    - [IV. Adding Interactivity](#iv-adding-interactivity)
 
 ## About This Document
 
@@ -375,11 +376,11 @@ _Source: “Skillcrush - Introduction to JavaScript React - Module 11.2”_
 
 ## Starting A Greenfield Project
 
-There are several phases of a greenfield project that you should complete in the following order: dividing the UI into its disparate components, coding a static version of the UI, and organizing the data flow.
+There are several phases of a greenfield project that you should complete in the following order: dividing the UI into its disparate components, coding a static version of the UI, organizing the data flow, and adding interactivity.
 
 -   **greenfield project**: a brand new project built from scratch.
 
-### 1. Dividing The UI Into Components
+### I. Dividing The UI Into Components
 
 1. Wireframe the UI.
 2. Identify & name the presentational components (appearance rendering).
@@ -388,14 +389,14 @@ There are several phases of a greenfield project that you should complete in the
 ![Divide the UI](../../Images/stickynotes-wireframe.png)
 _Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
 
-### 2. Coding A Static UI
+### II. Coding A Static UI
 
 1. Code a single React component with the JSX required to render the UI.
     - Don't worry about data management or dynamic interactions yet.
 2. Separate out the JSX into separate components.
     1. Export these child components and import them into their appropriate parent components.
 
-### 3. Organizing Data Flow
+### III. Organizing Data Flow
 
 -   **data flow**: the process by which the UI handles data, including:
     -   where state is managed.
@@ -407,3 +408,16 @@ _Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
 2. Choose a data model (e.g. string, array, object, etc.) appropriate for the dynamic content.
 3. Assign data management within a container component (e.g. Page or App or some high-level view).
 4. Swap in variables (state/props) to replace static values.
+
+### IV. Adding Interactivity
+
+1. Determine user intent.
+    - What does the user expect to happen when they click a button or submit a form?
+2. Write event handlers to update data models.
+    - How does the data need to be updated? For example:
+        - Adding strings to a list.
+        - Filtering values from arrays.
+        - Updating boolean values.
+    - Determine what type of code best handles the data update (button, text input, lifecycle method, etc).
+3. Add event listeners to the JSX elements users will interact with.
+    - If the event listeners and state are on different components, pass a reference (prop) to your event handler.

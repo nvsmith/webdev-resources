@@ -1,31 +1,31 @@
 # Markdown Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.04
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.018
 
 > VSCode Markdown Preview Shortcut: `⌘K V` (note space).
 >
-> -   After opening Preview, `⌘+Shift+P` and search `Markdown: Toggle Preview Locking` to lock the preview mode on this document. (Otherwise, if you open another Markdown file, the preview window will switch that the new file.)
+> -   After opening Preview, `⌘+Shift+P` and search `Markdown: Open Locked Preview to the Side` to lock the preview mode on this document. (Otherwise, if you open another Markdown file, the preview window will switch that the new file.)
 
 ## Table of Contents
 
--   [Markdown Cheatsheet](#markdown-cheatsheet)
-    -   [Table of Contents](#table-of-contents)
-    -   [About This Document](#about-this-document)
--   [# h1 heading](#-h1-heading)
-    -   [## h2 heading](#-h2-heading)
-        -   [### h3 heading](#-h3-heading)
-            -   [#### h4 heading](#-h4-heading)
-                -   [##### h5 heading](#-h5-heading)
-                    -   [###### h6 heading](#-h6-heading)
-    -   [Text Elements](#text-elements)
-        -   [Blockquotes](#blockquotes)
-    -   [Typographic Replacements](#typographic-replacements)
-    -   [Links \& Images](#links--images)
-    -   [Code](#code)
-    -   [Horizontal Rules \& Breaks](#horizontal-rules--breaks)
-    -   [Lists](#lists)
-        -   [Unordered](#unordered)
-        -   [Ordered](#ordered)
+- [Markdown Cheatsheet](#markdown-cheatsheet)
+  - [Table of Contents](#table-of-contents)
+  - [About This Document](#about-this-document)
+- [# h1 heading](#-h1-heading)
+  - [## h2 heading](#-h2-heading)
+    - [### h3 heading](#-h3-heading)
+      - [#### h4 heading](#-h4-heading)
+        - [##### h5 heading](#-h5-heading)
+          - [###### h6 heading](#-h6-heading)
+  - [Text Elements](#text-elements)
+    - [Blockquotes](#blockquotes)
+  - [Typographic Replacements](#typographic-replacements)
+  - [Links \& Images](#links--images)
+  - [Code](#code)
+  - [Horizontal Rules \& Breaks](#horizontal-rules--breaks)
+  - [Lists](#lists)
+    - [Unordered](#unordered)
+    - [Ordered](#ordered)
 
 <br>
 
