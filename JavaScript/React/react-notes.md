@@ -1,39 +1,39 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.18
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.22
 
 ## Table Of Contents
 
-- [React Notes](#react-notes)
-  - [Table Of Contents](#table-of-contents)
-  - [About This Document](#about-this-document)
-  - [Quick Concepts](#quick-concepts)
-  - [Installing React](#installing-react)
-    - [Option A: Installing React Automatically](#option-a-installing-react-automatically)
-    - [Option B: Installing React Manually](#option-b-installing-react-manually)
-      - [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
-      - [2. Install Prerequisites](#2-install-prerequisites)
-      - [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
-      - [4. Install React Packages](#4-install-react-packages)
-        - [Install React Dependencies](#install-react-dependencies)
-        - [Install Dev Dependencies](#install-dev-dependencies)
-      - [5. Add Files To Your Project](#5-add-files-to-your-project)
-      - [6. Update Your Scripts](#6-update-your-scripts)
-      - [7. Execute Your Scripts](#7-execute-your-scripts)
-  - [Uninstalling React](#uninstalling-react)
-  - [UI Layout](#ui-layout)
-    - [Installing React Grid (Optional)](#installing-react-grid-optional)
-  - [Naming React Components](#naming-react-components)
-  - [Organizing Your Project](#organizing-your-project)
-  - [Lifecycle Methods](#lifecycle-methods)
-  - [Components \& Props](#components--props)
-    - [Presentational \& Container Components](#presentational--container-components)
-      - [Defining Presentational Components](#defining-presentational-components)
-  - [Starting A Greenfield Project](#starting-a-greenfield-project)
-    - [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
-    - [II. Coding A Static UI](#ii-coding-a-static-ui)
-    - [III. Organizing Data Flow](#iii-organizing-data-flow)
-    - [IV. Adding Interactivity](#iv-adding-interactivity)
+-   [React Notes](#react-notes)
+    -   [Table Of Contents](#table-of-contents)
+    -   [About This Document](#about-this-document)
+    -   [Quick Concepts](#quick-concepts)
+    -   [Installing React](#installing-react)
+        -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+        -   [Option B: Installing React Manually](#option-b-installing-react-manually)
+            -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
+            -   [2. Install Prerequisites](#2-install-prerequisites)
+            -   [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
+            -   [4. Install React Packages](#4-install-react-packages)
+                -   [Install React Dependencies](#install-react-dependencies)
+                -   [Install Dev Dependencies](#install-dev-dependencies)
+            -   [5. Add Files To Your Project](#5-add-files-to-your-project)
+            -   [6. Update Your Scripts](#6-update-your-scripts)
+            -   [7. Execute Your Scripts](#7-execute-your-scripts)
+    -   [Uninstalling React](#uninstalling-react)
+    -   [UI Layout](#ui-layout)
+        -   [Installing React Grid (Optional)](#installing-react-grid-optional)
+    -   [Naming React Components](#naming-react-components)
+    -   [Organizing Your Project](#organizing-your-project)
+    -   [Lifecycle Methods](#lifecycle-methods)
+    -   [Components \& Props](#components--props)
+        -   [Presentational \& Container Components](#presentational--container-components)
+            -   [Defining Presentational Components](#defining-presentational-components)
+    -   [Starting A Greenfield Project](#starting-a-greenfield-project)
+        -   [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
+        -   [II. Coding A Static UI](#ii-coding-a-static-ui)
+        -   [III. Organizing Data Flow](#iii-organizing-data-flow)
+        -   [IV. Adding Interactivity](#iv-adding-interactivity)
 
 ## About This Document
 
@@ -420,4 +420,5 @@ _Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
         - Updating boolean values.
     - Determine what type of code best handles the data update (button, text input, lifecycle method, etc).
 3. Add event listeners to the JSX elements users will interact with.
+    - Event handlers must be methods of the component that owns the state.
     - If the event listeners and state are on different components, pass a reference (prop) to your event handler.
