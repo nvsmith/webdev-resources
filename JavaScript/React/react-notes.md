@@ -4,36 +4,39 @@
 
 ## Table Of Contents
 
--   [React Notes](#react-notes)
-    -   [Table Of Contents](#table-of-contents)
-    -   [About This Document](#about-this-document)
-    -   [Quick Concepts](#quick-concepts)
-    -   [Installing React](#installing-react)
-        -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
-        -   [Option B: Installing React Manually](#option-b-installing-react-manually)
-            -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
-            -   [2. Install Prerequisites](#2-install-prerequisites)
-            -   [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
-            -   [4. Install React Packages](#4-install-react-packages)
-                -   [Install React Dependencies](#install-react-dependencies)
-                -   [Install Dev Dependencies](#install-dev-dependencies)
-            -   [5. Add Files To Your Project](#5-add-files-to-your-project)
-            -   [6. Update Your Scripts](#6-update-your-scripts)
-            -   [7. Execute Your Scripts](#7-execute-your-scripts)
-    -   [Uninstalling React](#uninstalling-react)
-    -   [UI Layout](#ui-layout)
-        -   [Installing React Grid (Optional)](#installing-react-grid-optional)
-    -   [Naming React Components](#naming-react-components)
-    -   [Organizing Your Project](#organizing-your-project)
-    -   [Lifecycle Methods](#lifecycle-methods)
-    -   [Components \& Props](#components--props)
-        -   [Presentational \& Container Components](#presentational--container-components)
-            -   [Defining Presentational Components](#defining-presentational-components)
-    -   [Starting A Greenfield Project](#starting-a-greenfield-project)
-        -   [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
-        -   [II. Coding A Static UI](#ii-coding-a-static-ui)
-        -   [III. Organizing Data Flow](#iii-organizing-data-flow)
-        -   [IV. Adding Interactivity](#iv-adding-interactivity)
+- [React Notes](#react-notes)
+  - [Table Of Contents](#table-of-contents)
+  - [About This Document](#about-this-document)
+  - [Quick Concepts](#quick-concepts)
+  - [Installing React](#installing-react)
+    - [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+      - [Important Files \& Directories](#important-files--directories)
+    - [Option B: Installing React Manually](#option-b-installing-react-manually)
+      - [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
+      - [2. Install Prerequisites](#2-install-prerequisites)
+      - [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
+      - [4. Install React Packages](#4-install-react-packages)
+        - [Install React Dependencies](#install-react-dependencies)
+        - [Install Dev Dependencies](#install-dev-dependencies)
+      - [5. Add Files To Your Project](#5-add-files-to-your-project)
+      - [6. Update Your Scripts](#6-update-your-scripts)
+      - [7. Execute Your Scripts](#7-execute-your-scripts)
+    - [Option C: Cloning Existing React Projects](#option-c-cloning-existing-react-projects)
+      - [Cloning From GitHub](#cloning-from-github)
+  - [Uninstalling React](#uninstalling-react)
+  - [UI Layout](#ui-layout)
+    - [Installing React Grid (Optional)](#installing-react-grid-optional)
+  - [Naming React Components](#naming-react-components)
+  - [Organizing Your Project](#organizing-your-project)
+  - [Lifecycle Methods](#lifecycle-methods)
+  - [Components \& Props](#components--props)
+    - [Presentational \& Container Components](#presentational--container-components)
+      - [Defining Presentational Components](#defining-presentational-components)
+  - [Starting A Greenfield Project](#starting-a-greenfield-project)
+    - [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
+    - [II. Coding A Static UI](#ii-coding-a-static-ui)
+    - [III. Organizing Data Flow](#iii-organizing-data-flow)
+    - [IV. Adding Interactivity](#iv-adding-interactivity)
 
 ## About This Document
 
@@ -69,12 +72,27 @@ Here are the fundamental concepts you'll need to build/maintain React apps:
 
 ### Option A: Installing React Automatically
 
-Use the **Create React App** to spin up a React application quickly.
+Use the **Create React App** toolchain to spin up a React application quickly using Node.js, npm, and npx.
 
-1. Install `node.js` if you haven't already.
+-   **toolchain**: a group of tools and libraries that work together.
+    -   The Create React App toolchain includes Babel and Webpack.
+-   **Node.js (Node)**: an open-source, multi-platform runtime environment that runs on a server. Allows you to use JavaScript outside of the browser environment.
+-   **npm (Node Package Manager)**: a collection of open-source packages and package manager.
+-   **npx**: an npm package runner that allows you to execute packages without installation.
+
+1. Install Node, npm, and npx if you haven't already.
+    - Check Node installation: `node -v`
+    - Check npm installation: `npm -v`
+    - Check npx installation: `npx -v`
 2. In your terminal, navigate to the directory where you want to create your project root.
-3. Run the Create React App, replacing "project-name" with your own project:
-    1. `npx create-react-app project-name`
+3. Run the Create React App, replacing "project-name" with your own project: `npx create-react-app project-name`
+
+#### Important Files & Directories
+
+-   **package.json**: Contains the metadata about the project, a list of dependencies, and scripts you can run using the npm command.
+-   **package-lock.json**: An automatically generated file by React that shouldn’t be touched.
+    -   This file records the specific version of dependencies to ensure all devs are working with the same packages.
+-   **node_modules**: An automatically created directory that should never be placed under version control.
 
 For simple projects, you can delete the following:
 
@@ -82,6 +100,7 @@ For simple projects, you can delete the following:
 2. **src/reportWebVitals.js**
     1. Open **src/index.js** to delete the following lines: `import reportWebVitals from './reportWebVitals';` and `reportWebVitals();`.
 3. **src/setupTests.js**
+4. **src/logo.svg**
 
 After setup is complete, run `npm run start` to execute the script which starts React and allows you to view your project in the browser.
 
@@ -191,6 +210,29 @@ Run `npm run start` to execute the script which starts React and allows you to v
 > Loopback: http://localhost:8080/
 
 Open a second terminal window for any development needs and allow Node to run in the background in the first window. Press `Ctrl+C` in the terminal to stop the webpack-dev-server at any time.
+
+<br>
+
+### Option C: Cloning Existing React Projects
+
+#### Cloning From GitHub
+
+```bash
+# Navigate to your project directory
+cd project-name
+
+# Navigate to the GitHub repo
+# Click the green Code button
+# SSH: copy repo location
+
+# Clone the repo in terminal
+git clone git@github...
+
+# Rename origin to upstream
+git remote rename origin upstream
+```
+
+> Renaming the origin allows you to have a connection to the codebase while leaving the origin connection free if you decide to create your own repo later.
 
 <br>
 
@@ -422,3 +464,5 @@ _Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
 3. Add event listeners to the JSX elements users will interact with.
     - Event handlers must be methods of the component that owns the state.
     - If the event listeners and state are on different components, pass a reference (prop) to your event handler.
+
+<br>

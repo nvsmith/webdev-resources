@@ -15,10 +15,13 @@
     - [Initialize Local Git Repo](#initialize-local-git-repo)
     - [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
   - [Version Control Removal](#version-control-removal)
+    - [Remove Local Git Tracking](#remove-local-git-tracking)
+    - [Remove Remote Tracking](#remove-remote-tracking)
   - [Creating \& Modifying Branches](#creating--modifying-branches)
-    - [Rename An Existing Branch](#rename-an-existing-branch)
+    - [Rename An Existing Local Branch](#rename-an-existing-local-branch)
     - [Create A New Branch](#create-a-new-branch)
     - [Clone A Repo](#clone-a-repo)
+    - [Rename a Remote Repo](#rename-a-remote-repo)
     - [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
       - [Fetch vs. Pull](#fetch-vs-pull)
   - [Comparing Branches \& Commits](#comparing-branches--commits)
@@ -141,6 +144,8 @@ View more about Remotes at [Git Basics - Working with Remotes](https://git-scm.c
 
 ## Version Control Removal
 
+### Remove Local Git Tracking
+
 To remove Git from a project, you can simply delete the _.git_ directory in the root of your project.
 
 ⛔️ Caution! This will permanently remove the version control history and configurations.
@@ -162,11 +167,23 @@ rm .gitignore
 # Go to GitHub and delete your repository if you don't want a remote copy
 ```
 
+### Remove Remote Tracking
+
+After cloning a remote repo, you may want to remove the tracking so that your local project is no longer synced to the remote.
+
+```bash
+# Navigate to project directory
+cd Sites/projectName
+
+# Remove remote tracking
+git remove remote
+```
+
 <br>
 
 ## Creating & Modifying Branches
 
-### Rename An Existing Branch
+### Rename An Existing Local Branch
 
 ```bash
 # Change the name of oldBranch to newBranch
@@ -194,6 +211,16 @@ git checkout -b feature/modal origin/deploy
 
 # Push the feature/modal branch to remote origin
 git push origin feature/modal
+```
+
+### Rename a Remote Repo
+
+```bash
+# View existing remotes
+git remote -v
+
+# Rename origin to upstream
+git remote rename origin upstream
 ```
 
 ### Download Remote Files & Commits to Local
