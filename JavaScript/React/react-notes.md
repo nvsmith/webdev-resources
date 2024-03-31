@@ -4,39 +4,48 @@
 
 ## Table Of Contents
 
-- [React Notes](#react-notes)
-  - [Table Of Contents](#table-of-contents)
-  - [About This Document](#about-this-document)
-  - [Quick Concepts](#quick-concepts)
-  - [Installing React](#installing-react)
-    - [Option A: Installing React Automatically](#option-a-installing-react-automatically)
-      - [Important Files \& Directories](#important-files--directories)
-    - [Option B: Installing React Manually](#option-b-installing-react-manually)
-      - [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
-      - [2. Install Prerequisites](#2-install-prerequisites)
-      - [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
-      - [4. Install React Packages](#4-install-react-packages)
-        - [Install React Dependencies](#install-react-dependencies)
-        - [Install Dev Dependencies](#install-dev-dependencies)
-      - [5. Add Files To Your Project](#5-add-files-to-your-project)
-      - [6. Update Your Scripts](#6-update-your-scripts)
-      - [7. Execute Your Scripts](#7-execute-your-scripts)
-    - [Option C: Cloning Existing React Projects](#option-c-cloning-existing-react-projects)
-      - [Cloning From GitHub](#cloning-from-github)
-  - [Uninstalling React](#uninstalling-react)
-  - [UI Layout](#ui-layout)
-    - [Installing React Grid (Optional)](#installing-react-grid-optional)
-  - [Naming React Components](#naming-react-components)
-  - [Organizing Your Project](#organizing-your-project)
-  - [Lifecycle Methods](#lifecycle-methods)
-  - [Components \& Props](#components--props)
-    - [Presentational \& Container Components](#presentational--container-components)
-      - [Defining Presentational Components](#defining-presentational-components)
-  - [Starting A Greenfield Project](#starting-a-greenfield-project)
-    - [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
-    - [II. Coding A Static UI](#ii-coding-a-static-ui)
-    - [III. Organizing Data Flow](#iii-organizing-data-flow)
-    - [IV. Adding Interactivity](#iv-adding-interactivity)
+-   [React Notes](#react-notes)
+    -   [Table Of Contents](#table-of-contents)
+    -   [About This Document](#about-this-document)
+    -   [Quick Concepts](#quick-concepts)
+        -   [1. Components](#1-components)
+        -   [2. ReactDOM](#2-reactdom)
+        -   [3. Class vs Functional Components](#3-class-vs-functional-components)
+        -   [4. JSX - extended JavaScript](#4-jsx---extended-javascript)
+        -   [5. State](#5-state)
+        -   [6. Event Handling](#6-event-handling)
+        -   [7. Asynch setState](#7-asynch-setstate)
+        -   [8. Props](#8-props)
+        -   [9. Refs](#9-refs)
+    -   [Installing React](#installing-react)
+        -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+            -   [Important Files \& Directories](#important-files--directories)
+        -   [Option B: Installing React Manually](#option-b-installing-react-manually)
+            -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
+            -   [2. Install Prerequisites](#2-install-prerequisites)
+            -   [3. Initialize Package Manager (NPM)](#3-initialize-package-manager-npm)
+            -   [4. Install React Packages](#4-install-react-packages)
+                -   [Install React Dependencies](#install-react-dependencies)
+                -   [Install Dev Dependencies](#install-dev-dependencies)
+            -   [5. Add Files To Your Project](#5-add-files-to-your-project)
+            -   [6. Update Your Scripts](#6-update-your-scripts)
+            -   [7. Execute Your Scripts](#7-execute-your-scripts)
+        -   [Option C: Cloning Existing React Projects](#option-c-cloning-existing-react-projects)
+            -   [Cloning From GitHub](#cloning-from-github)
+    -   [Uninstalling React](#uninstalling-react)
+    -   [UI Layout](#ui-layout)
+        -   [Installing React Grid (Optional)](#installing-react-grid-optional)
+    -   [Naming React Components](#naming-react-components)
+    -   [Organizing Your Project](#organizing-your-project)
+    -   [Lifecycle Methods](#lifecycle-methods)
+    -   [Components \& Props](#components--props)
+        -   [Presentational \& Container Components](#presentational--container-components)
+            -   [Defining Presentational Components](#defining-presentational-components)
+    -   [Starting A Greenfield Project](#starting-a-greenfield-project)
+        -   [I. Dividing The UI Into Components](#i-dividing-the-ui-into-components)
+        -   [II. Coding A Static UI](#ii-coding-a-static-ui)
+        -   [III. Organizing Data Flow](#iii-organizing-data-flow)
+        -   [IV. Adding Interactivity](#iv-adding-interactivity)
 
 ## About This Document
 
@@ -50,21 +59,60 @@ React is a JavaScript library used to build user interfaces by implementing modu
 
 Here are the fundamental concepts you'll need to build/maintain React apps:
 
-1. Components
-2. ReactDOM
-3. Class vs Functional Components
+### 1. Components
+
+### 2. ReactDOM
+
+### 3. Class vs Functional Components
 
     - ❌ Don't use class components (deprecated).
     - ✅ Use functional components.
         - State management is decoupled with function components (cleaner setup/inheritance).
         - Libraries use hooks; classes won't be compatible.
 
-4. JSX
-5. State
-6. Event Handling
-7. Asynch setState
-8. Props
-9. Refs
+### 4. JSX - extended JavaScript
+
+Text, numbers, arrays render as text.
+
+```jsx
+<p>[123] vs {[456]}</p>
+// [123] vs 456
+```
+
+Objects return an error if rendered.
+
+```jsx
+<p>{{ name: "Clark" }}</p>
+// Error
+```
+
+Booleans don't render.
+
+```jsx
+<p>{true === true}</p>
+// (renders nothing)
+```
+
+Variable render their values.
+
+```jsx
+const name = "Clark";
+<p>{name}</p>; // Clark.
+```
+
+> Syntax Note: `{}` vs `{ {} }`: The outer pair of `{}` indicates a JSX expression, while an inner pair `{ {} }` contains an object within the expression.
+
+### 5. State
+
+### 6. Event Handling
+
+### 7. Asynch setState
+
+### 8. Props
+
+-   **props**: properties passed down from Parent Component to Child Components.
+
+### 9. Refs
 
 <br>
 
