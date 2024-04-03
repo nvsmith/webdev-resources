@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.22
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.02
 
 ## Table Of Contents
 
@@ -17,8 +17,10 @@
         -   [7. Asynch setState](#7-asynch-setstate)
         -   [8. Props](#8-props)
         -   [9. Refs](#9-refs)
+        -   [Controlled Components](#controlled-components)
     -   [Installing React](#installing-react)
         -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+            -   [The Create React App Toolchain](#the-create-react-app-toolchain)
             -   [Important Files \& Directories](#important-files--directories)
         -   [Option B: Installing React Manually](#option-b-installing-react-manually)
             -   [1. Understand The JavaScript Ecosystem](#1-understand-the-javascript-ecosystem)
@@ -46,6 +48,9 @@
         -   [II. Coding A Static UI](#ii-coding-a-static-ui)
         -   [III. Organizing Data Flow](#iii-organizing-data-flow)
         -   [IV. Adding Interactivity](#iv-adding-interactivity)
+    -   [React Hooks](#react-hooks)
+        -   [useState vs useEffect](#usestate-vs-useeffect)
+            -   [useEffect()](#useeffect)
 
 ## About This Document
 
@@ -114,6 +119,10 @@ const name = "Clark";
 
 ### 9. Refs
 
+### Controlled Components
+
+Inputs in React forms.
+
 <br>
 
 ## Installing React
@@ -122,18 +131,32 @@ const name = "Clark";
 
 Use the **Create React App** toolchain to spin up a React application quickly using Node.js, npm, and npx.
 
--   **toolchain**: a group of tools and libraries that work together.
-    -   The Create React App toolchain includes Babel and Webpack.
--   **Node.js (Node)**: an open-source, multi-platform runtime environment that runs on a server. Allows you to use JavaScript outside of the browser environment.
--   **npm (Node Package Manager)**: a collection of open-source packages and package manager.
--   **npx**: an npm package runner that allows you to execute packages without installation.
-
 1. Install Node, npm, and npx if you haven't already.
     - Check Node installation: `node -v`
     - Check npm installation: `npm -v`
     - Check npx installation: `npx -v`
 2. In your terminal, navigate to the directory where you want to create your project root.
-3. Run the Create React App, replacing "project-name" with your own project: `npx create-react-app project-name`
+3. Run the Create React App, replacing "project-name" with your own project: `npx create-react-app project-name`.
+4. Your project can now be viewed in your browser:
+    1. `cd project-name`
+    2. `npm run start`
+5. For simple projects, you can delete the following:
+    1. **src/App.test.js**
+    2. **src/reportWebVitals.js**
+    3. Open **src/index.js** and delete:
+        - `import reportWebVitals from './reportWebVitals';`
+        - `reportWebVitals();`.
+    4. **src/setupTests.js**
+    5. **src/logo.svg**
+        - Delete any any logo code in **App.js**
+
+#### The Create React App Toolchain
+
+-   **toolchain**: a group of tools and libraries that work together.
+    -   The Create React App toolchain includes Babel and Webpack.
+-   **Node.js (Node)**: an open-source, multi-platform runtime environment that runs on a server. Allows you to use JavaScript outside of the browser environment.
+-   **npm (Node Package Manager)**: a collection of open-source packages and package manager.
+-   **npx**: an npm package runner that allows you to execute packages without installation.
 
 #### Important Files & Directories
 
@@ -141,16 +164,6 @@ Use the **Create React App** toolchain to spin up a React application quickly us
 -   **package-lock.json**: An automatically generated file by React that shouldn’t be touched.
     -   This file records the specific version of dependencies to ensure all devs are working with the same packages.
 -   **node_modules**: An automatically created directory that should never be placed under version control.
-
-For simple projects, you can delete the following:
-
-1. **src/App.test.js**
-2. **src/reportWebVitals.js**
-    1. Open **src/index.js** to delete the following lines: `import reportWebVitals from './reportWebVitals';` and `reportWebVitals();`.
-3. **src/setupTests.js**
-4. **src/logo.svg**
-
-After setup is complete, run `npm run start` to execute the script which starts React and allows you to view your project in the browser.
 
 ### Option B: Installing React Manually
 
@@ -514,3 +527,41 @@ _Source: “Skillcrush - Introduction to JavaScript React - Module 12.3”_
     - If the event listeners and state are on different components, pass a reference (prop) to your event handler.
 
 <br>
+
+## React Hooks
+
+### useState vs useEffect
+
+-   `useState`: manages state within a functional component; declare a state variable and a function to update said variable.
+    -   Stores and updates data.
+-   `useEffect`: perform side effects in a component _after_ the component has rendered.
+    -   e.g. Updates the document title based on a state change, fetches data, or subscribes to events.
+
+#### useEffect()
+
+```jsx
+// Every rerender
+useEffect(() => {
+    // Functions inside this hook run AFTER functions outside this hook;
+    // i.e. your page components will mount before this inner function is called.
+    console.log("Runs every time component rerenders, e.g. onChange");
+});
+
+// onMount
+useEffect(() => {
+    console.log("Runs once)");
+}, []);
+
+// Condition based
+useEffect(() => {
+    console.log("Runs when dependency changes");
+}, [dependency]);
+
+// Condition based clean up
+useEffect(() => {
+    console.log("Runs when dependency changes");
+    return () => {
+        console.log("Use a return to clean up--this runs before the actual code");
+    };
+}, [dependency]);
+```

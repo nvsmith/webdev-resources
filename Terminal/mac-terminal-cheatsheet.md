@@ -34,10 +34,17 @@
     -   [Admin Privileges](#admin-privileges)
         -   [Run Commands As Superuser](#run-commands-as-superuser)
         -   [Run A Shell As Superuser](#run-a-shell-as-superuser)
-    -   [Computer Shutdown, Restart, Sleep](#computer-shutdown-restart-sleep)
+    -   [Computer Utilities (MacOS)](#computer-utilities-macos)
+        -   [Shutdown, Restart, Sleep](#shutdown-restart-sleep)
         -   [Shutdown Immediately](#shutdown-immediately)
         -   [Shutdown In 10 Minutes](#shutdown-in-10-minutes)
         -   [Schedule Shutdown](#schedule-shutdown)
+        -   [Image manipulation](#image-manipulation)
+            -   [Image Format Conversion](#image-format-conversion)
+            -   [Resize Image](#resize-image)
+        -   [Check Network Stats](#check-network-stats)
+        -   [File Conversion](#file-conversion)
+        -   [Text To Speech](#text-to-speech)
 
 <br>
 
@@ -191,7 +198,9 @@ Prepend `sudo` to any command.
 
 <br>
 
-## Computer Shutdown, Restart, Sleep
+## Computer Utilities (MacOS)
+
+### Shutdown, Restart, Sleep
 
 Modifying system power will likely require `sudo` permissions.
 
@@ -214,3 +223,31 @@ Use the following options with any of the **shutdown** commands below:
 Use 24-hour (hh:mm) time to schedule a power off.
 
 `sudo shutdown -h 22:30`
+
+### Image manipulation
+
+#### Image Format Conversion
+
+Convert a jpg to png
+`sips -s format png oldImage.jpg --out newImage.png`
+
+#### Resize Image
+
+Set max height/width to 800 pixels.
+`sips -Z 800 image.jpg`
+
+### Check Network Stats
+
+`networkQuality`
+
+### File Conversion
+
+Convert a text file to HTML
+`textutil -convert html document.txt`
+
+Convert a text file to PDF
+`textutil -convert pdf document.txt -output document.pdf`
+
+### Text To Speech
+
+`say hello world`
