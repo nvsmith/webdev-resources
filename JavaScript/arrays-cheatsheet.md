@@ -1,6 +1,6 @@
 # JavaScript Arrays Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.02.12
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.04
 
 ## Table of Contents
 
@@ -28,6 +28,8 @@
         -   [.map()](#map)
         -   [.split()](#split)
         -   [.join()](#join)
+    -   [Objects \& Arrays](#objects--arrays)
+        -   [Object.entries()](#objectentries)
 
 <br>
 
@@ -389,4 +391,34 @@ const secretIdentities = ["Bruce Wayne", " Clark Kent"];
 const alterEgos = secretIdentities.join(",");
 
 console.log(alterEgos); // Bruce Wayne, Clark Kent
+```
+
+<br>
+
+## Objects & Arrays
+
+### Object.entries()
+
+`Object.entries(exampleObject)`
+
+Return an object as an array of [key, value] pairs
+
+```js
+const jurisdiction = {
+    Superman: "Metropolis",
+    Batman: "Gotham",
+    Flash: "Central City",
+};
+
+console.log(Object.entries(jurisdiction));
+/*[
+  [ 'Superman', 'Metropolis' ],
+  [ 'Batman', 'Gotham' ],
+  [ 'Flash', 'Central City' ]
+]*/
+
+Object.entries(jurisdiction).forEach(([key, value]) => console.log(`${key}: ${value}`));
+// 'Superman: Metropolis'
+// 'Batman: Gotham'
+// 'Flash: Central City'
 ```

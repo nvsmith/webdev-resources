@@ -1,50 +1,50 @@
 # Mac Terminal Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.27
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.04
 
 ## Table of Contents
 
--   [Mac Terminal Cheatsheet](#mac-terminal-cheatsheet)
-    -   [Table of Contents](#table-of-contents)
-    -   [About This Document](#about-this-document)
-    -   [Common Mac Keyboard Symbols](#common-mac-keyboard-symbols)
-    -   [Processing \& Searching Text](#processing--searching-text)
-    -   [Command Line Navigation](#command-line-navigation)
-        -   [Move Cursor To Beginning Of Input](#move-cursor-to-beginning-of-input)
-        -   [Move Cursor To End Of Input](#move-cursor-to-end-of-input)
-        -   [Move Backward One Word](#move-backward-one-word)
-        -   [Move Forward One Word](#move-forward-one-word)
-    -   [Input Manipulation](#input-manipulation)
-        -   [Clear Entire Input](#clear-entire-input)
-        -   [Clear Entire Input After Cursor](#clear-entire-input-after-cursor)
-        -   [Clear Previous Word](#clear-previous-word)
-        -   [Clear Next Word](#clear-next-word)
-        -   [Clear Terminal Screen](#clear-terminal-screen)
-        -   [Yank (Paste Previously Cleared) Text](#yank-paste-previously-cleared-text)
-        -   [Cancel (Signal Interrupt) Current Command Line](#cancel-signal-interrupt-current-command-line)
-    -   [Directory \& File Manipulation](#directory--file-manipulation)
-        -   [Make A Single Directory](#make-a-single-directory)
-        -   [Make Multiple Directories](#make-multiple-directories)
-        -   [Make Nested Directories](#make-nested-directories)
-        -   [Copy a Directory](#copy-a-directory)
-        -   [Create A File](#create-a-file)
-        -   [Create Multiple Files](#create-multiple-files)
-        -   [Create A Directory \& File Together](#create-a-directory--file-together)
-        -   [Move File(s) To A Directory](#move-files-to-a-directory)
-    -   [Admin Privileges](#admin-privileges)
-        -   [Run Commands As Superuser](#run-commands-as-superuser)
-        -   [Run A Shell As Superuser](#run-a-shell-as-superuser)
-    -   [Computer Utilities (MacOS)](#computer-utilities-macos)
-        -   [Shutdown, Restart, Sleep](#shutdown-restart-sleep)
-        -   [Shutdown Immediately](#shutdown-immediately)
-        -   [Shutdown In 10 Minutes](#shutdown-in-10-minutes)
-        -   [Schedule Shutdown](#schedule-shutdown)
-        -   [Image manipulation](#image-manipulation)
-            -   [Image Format Conversion](#image-format-conversion)
-            -   [Resize Image](#resize-image)
-        -   [Check Network Stats](#check-network-stats)
-        -   [File Conversion](#file-conversion)
-        -   [Text To Speech](#text-to-speech)
+- [Mac Terminal Cheatsheet](#mac-terminal-cheatsheet)
+  - [Table of Contents](#table-of-contents)
+  - [About This Document](#about-this-document)
+  - [Common Mac Keyboard Symbols](#common-mac-keyboard-symbols)
+  - [Processing \& Searching Text](#processing--searching-text)
+  - [Command Line Navigation](#command-line-navigation)
+    - [Move Cursor To Beginning Of Input](#move-cursor-to-beginning-of-input)
+    - [Move Cursor To End Of Input](#move-cursor-to-end-of-input)
+    - [Move Backward One Word](#move-backward-one-word)
+    - [Move Forward One Word](#move-forward-one-word)
+  - [Input Manipulation](#input-manipulation)
+    - [Clear Entire Input](#clear-entire-input)
+    - [Clear Entire Input After Cursor](#clear-entire-input-after-cursor)
+    - [Clear Previous Word](#clear-previous-word)
+    - [Clear Next Word](#clear-next-word)
+    - [Clear Terminal Screen](#clear-terminal-screen)
+    - [Yank (Paste Previously Cleared) Text](#yank-paste-previously-cleared-text)
+    - [Cancel (Signal Interrupt) Current Command Line](#cancel-signal-interrupt-current-command-line)
+  - [Directory \& File Manipulation](#directory--file-manipulation)
+    - [Make A Single Directory](#make-a-single-directory)
+    - [Make Multiple Directories](#make-multiple-directories)
+    - [Make Nested Directories](#make-nested-directories)
+    - [Copy a Directory](#copy-a-directory)
+    - [Create A File](#create-a-file)
+    - [Create Multiple Files](#create-multiple-files)
+    - [Create A Directory \& File Together](#create-a-directory--file-together)
+    - [Move File(s) To A Directory](#move-files-to-a-directory)
+  - [Admin Privileges](#admin-privileges)
+    - [Run Commands As Superuser](#run-commands-as-superuser)
+    - [Run A Shell As Superuser](#run-a-shell-as-superuser)
+  - [Computer Utilities (MacOS)](#computer-utilities-macos)
+    - [Shutdown, Restart, Sleep](#shutdown-restart-sleep)
+    - [Shutdown Immediately](#shutdown-immediately)
+    - [Shutdown In 10 Minutes](#shutdown-in-10-minutes)
+    - [Schedule Shutdown](#schedule-shutdown)
+    - [Image manipulation](#image-manipulation)
+      - [Image Format Conversion](#image-format-conversion)
+      - [Resize Image](#resize-image)
+    - [Check Network Stats](#check-network-stats)
+    - [File Conversion](#file-conversion)
+    - [Text To Speech](#text-to-speech)
 
 <br>
 
@@ -148,9 +148,13 @@ This terminates execution of the process and wipes the command line regardless o
 
 ### Make Multiple Directories
 
+-   `-p`: the parents option.
+
+Create directories within the current working directory.
 `mkdir -p dir1 dir2 dir3`
 
--   `-p`: the parents option.
+Create directories within a specified parent directory.
+`mkdir -p parentDirectory/dir1 dir2 dir3`
 
 ### Make Nested Directories
 
