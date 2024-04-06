@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.02
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.05
 
 ## Table Of Contents
 
@@ -121,7 +121,23 @@ const name = "Clark";
 
 ### Controlled Components
 
-Inputs in React forms.
+Inputs in React forms. Here is a basic example of a controlled input for a form which has `search` and `setSearch` being passed to the Component as props.
+
+```jsx
+<form
+    className="searchForm"
+    onSubmit={(e) => e.preventDefault()}
+>
+    <label htmlFor="search">Search Posts</label>
+    <input
+        id="search"
+        type="text"
+        placeholder="Search Posts"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+    />
+</form>
+```
 
 <br>
 
