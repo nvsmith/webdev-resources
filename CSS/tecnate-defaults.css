@@ -1,0 +1,66 @@
+/*
+
+COLORS
+Define color variables with RGB syntax, 
+which allows you to set opacity in the same way you do with RGBA.
+
+Set the color & opacity of a selector to the color variable, followed by the alpha channel. For example:
+
+.selector {
+  background-color: rgba(var(--silver-chalice), 0.25);
+}
+
+FONTS
+Define the base-font and calculate others based on Octatonic scale.
+
+*/
+
+:root {
+    --indigo-dye: 3, 60, 84;
+    --silver-chalice: 173, 173, 173;
+    --middle-red: 255, 143, 112;
+    --base-font-size: 16px;
+    --base-line-height: 1.5;
+}
+
+h1 {
+    font-size: calc(var(--base-font-size) * 2.0625);
+    line-height: calc(
+        (var(--base-font-size) * 2.0625) * var(--base-line-height)
+    );
+}
+
+h2 {
+    font-size: calc(var(--base-font-size) * 1.5417);
+    line-height: calc(
+        (var(--base-font-size) * 1.5417) * var(--base-line-height)
+    );
+}
+
+h3 {
+    font-size: calc(var(--base-font-size) * 1.2917);
+    line-height: calc(
+        (var(--base-font-size) * 1.2917) * var(--base-line-height)
+    );
+}
+
+h4 {
+    font-size: calc(var(--base-font-size) * 1.1458);
+    line-height: calc(
+        (var(--base-font-size) * 1.1458) * var(--base-line-height)
+    );
+}
+
+h5 {
+    font-size: calc(var(--base-font-size) * 1.0625);
+    line-height: calc(
+        (var(--base-font-size) * 1.0625) * var(--base-line-height)
+    );
+}
+
+h6,
+p,
+blockquote {
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+}

@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.05
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.08
 
 ## Table Of Contents
 
@@ -8,15 +8,15 @@
     -   [Table Of Contents](#table-of-contents)
     -   [About This Document](#about-this-document)
     -   [Quick Concepts](#quick-concepts)
-        -   [1. Components](#1-components)
-        -   [2. ReactDOM](#2-reactdom)
-        -   [3. Class vs Functional Components](#3-class-vs-functional-components)
-        -   [4. JSX - extended JavaScript](#4-jsx---extended-javascript)
-        -   [5. State](#5-state)
-        -   [6. Event Handling](#6-event-handling)
-        -   [7. Asynch setState](#7-asynch-setstate)
-        -   [8. Props](#8-props)
-        -   [9. Refs](#9-refs)
+        -   [Components](#components)
+        -   [ReactDOM](#reactdom)
+        -   [Class vs Functional Components](#class-vs-functional-components)
+        -   [JSX - extended JavaScript](#jsx---extended-javascript)
+        -   [State](#state)
+        -   [Event Handling](#event-handling)
+        -   [Asynch setState](#asynch-setstate)
+        -   [Props](#props)
+        -   [Refs](#refs)
         -   [Controlled Components](#controlled-components)
     -   [Installing React](#installing-react)
         -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
@@ -51,6 +51,9 @@
     -   [React Hooks](#react-hooks)
         -   [useState vs useEffect](#usestate-vs-useeffect)
             -   [useEffect()](#useeffect)
+    -   [Using Databases and HTTP](#using-databases-and-http)
+        -   [JSON Server](#json-server)
+        -   [Axios](#axios)
 
 ## About This Document
 
@@ -64,18 +67,18 @@ React is a JavaScript library used to build user interfaces by implementing modu
 
 Here are the fundamental concepts you'll need to build/maintain React apps:
 
-### 1. Components
+### Components
 
-### 2. ReactDOM
+### ReactDOM
 
-### 3. Class vs Functional Components
+### Class vs Functional Components
 
     - ❌ Don't use class components (deprecated).
     - ✅ Use functional components.
         - State management is decoupled with function components (cleaner setup/inheritance).
         - Libraries use hooks; classes won't be compatible.
 
-### 4. JSX - extended JavaScript
+### JSX - extended JavaScript
 
 Text, numbers, arrays render as text.
 
@@ -107,27 +110,24 @@ const name = "Clark";
 
 > Syntax Note: `{}` vs `{ {} }`: The outer pair of `{}` indicates a JSX expression, while an inner pair `{ {} }` contains an object within the expression.
 
-### 5. State
+### State
 
-### 6. Event Handling
+### Event Handling
 
-### 7. Asynch setState
+### Asynch setState
 
-### 8. Props
+### Props
 
 -   **props**: properties passed down from Parent Component to Child Components.
 
-### 9. Refs
+### Refs
 
 ### Controlled Components
 
 Inputs in React forms. Here is a basic example of a controlled input for a form which has `search` and `setSearch` being passed to the Component as props.
 
 ```jsx
-<form
-    className="searchForm"
-    onSubmit={(e) => e.preventDefault()}
->
+<form className="searchForm" onSubmit={(e) => e.preventDefault()}>
     <label htmlFor="search">Search Posts</label>
     <input
         id="search"
@@ -577,7 +577,68 @@ useEffect(() => {
 useEffect(() => {
     console.log("Runs when dependency changes");
     return () => {
-        console.log("Use a return to clean up--this runs before the actual code");
+        console.log(
+            "Use a return to clean up--this runs before the actual code"
+        );
     };
 }, [dependency]);
+```
+
+<br>
+
+## Using Databases and HTTP
+
+### JSON Server
+
+Use npx to run JSON Server without installing it as a dependency in your project:
+
+```bash
+npx json-server -p 3500 -w data/db.json
+```
+
+-   `-p`: port
+-   `-w`: watch
+
+### Axios
+
+Install Axios as a dependency
+
+```bash
+npm i axios
+```
+
+Set up Axios in desired file, e.g. **src/api/posts.js**
+
+```jsx
+import axios from "axios";
+
+export default axios.create({
+    baseURL: "http://localhost:3500",
+});
+```
+
+In the container component (e.g. App), set up the useEffect logic.
+
+```jsx
+import api from "./api/posts";
+function App() {
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await api.get("/posts");
+                setPosts(response.data);
+            } catch (err) {
+                if (err.response) {
+                    // Not in HTTP 200 response range
+                    console.log(err.response.data);
+                    console.log(err.response.status);
+                    console.log(err.response.headers);
+                } else {
+                    console.log(`Error: ${err.message}`);
+                }
+            }
+        };
+        fetchPosts();
+    }, []);
+}
 ```
