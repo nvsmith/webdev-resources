@@ -14,10 +14,12 @@
   - [Resource List](#resource-list)
     - [CSS](#css)
     - [Git](#git)
+    - [HTML](#html)
     - [JavaScript](#javascript)
       - [React](#react)
     - [Markdown](#markdown)
     - [Terminal](#terminal)
+    - [Think Like A Programmer](#think-like-a-programmer)
 
 <br>
 
@@ -56,11 +58,17 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### CSS
 
 1. [Bootstrap for Oxygen](CSS/bootstrap-oxygen.css)
+2. [Responsive Font Sizing](CSS/responsive-font-sizing.css)
+3. [Tecnate Web Solutions - Default Styles](CSS/tecnate-default-style.css)
 
 ### Git
 
-1. [Default .gitignore Template](Git/default-gitignore.md)
-2. [Git Cheatsheet](Git/git-cheatsheet.md)
+1. [Git Cheatsheet](Git/git-cheatsheet.md)
+2. [Git Ignore Template](Git/gitignore-template.txt)
+
+### HTML
+
+1. [HTML Notes](HTML/html-notes.md)
 
 ### JavaScript
 
@@ -70,6 +78,7 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 #### React
 
 1. [React Notes](JavaScript/React/react-notes.md)
+2. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
 
 ### Markdown
 
@@ -78,3 +87,7 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### Terminal
 
 1. [Mac Terminal Cheatsheet](Terminal/mac-terminal-cheatsheet.md)
+
+### Think Like A Programmer
+
+1. [Think Like A Programmer](./think-like-a-programmer.md)

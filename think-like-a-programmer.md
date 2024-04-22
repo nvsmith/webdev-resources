@@ -9,7 +9,7 @@
 - [Think Like a Programmer](#think-like-a-programmer)
   - [An Introduction to Creative Problem Solving](#an-introduction-to-creative-problem-solving)
     - [Book by V. Anton Spraul - 2012](#book-by-v-anton-spraul---2012)
-  - [1 - Strategies for Problem Solving](#1---strategies-for-problem-solving)
+  - [Chapter 1 - Strategies for Problem Solving](#chapter-1---strategies-for-problem-solving)
     - [General Problem Solving Techniques](#general-problem-solving-techniques)
       - [1. Always Have A Plan](#1-always-have-a-plan)
       - [2. Restate The Problem](#2-restate-the-problem)
@@ -28,7 +28,7 @@
 
 <hr>
 
-## 1 - Strategies for Problem Solving
+## Chapter 1 - Strategies for Problem Solving
 
 ### General Problem Solving Techniques
 
@@ -38,13 +38,15 @@
 4. Start With What You Know
 5. Reduce The Problem
 6. Look For Analogies
+7. Experiment
+8. Don't Get Frustrated
 
 #### 1. Always Have A Plan
 
 **This is the most important rule!**
 
 -   Having a plan is always possible.
-    -   Plans may require alteration or scrapping altogether, but you should always have one before you tackle a problem.
+-   Plans may require alteration or scrapping altogether, but you should always have one before you tackle a problem.
 -   ✅ Planning allows you to set and reach smaller, immediate goals.
 -   ❌ Without a plan, your only goal is to solve the whole problem.
 -   The first step of every plan is: "Formally restate the problem."
@@ -63,12 +65,12 @@
 
 ##### The Fox, the Goose, and the Corn
 
--   Think about the problem itself. It can be as productive, if not more, than thinking about the solution.
--   🫤 OK: List specific actions to take to solve the problem.
+-   Think about the nature of the problem itself. It can be just as, if not more, productive than thinking about the path to a solution.
+-   🫤 OK: List specific actions/tasks required to solve the problem.
     1.  Carry the fox across the river.
     2.  Carry the goose across the river.
     3.  Carry the corn across the river.
--   ✅ Better: Paramatize (make generic) the operations.
+-   ✅ Better: Parameterize (make generic) the operations.
     1. Row the boat across the shore.
     2. If the boat is empty, load an item from the shore.
     3. If the boat isn't empty, unload the item onto the shore.
@@ -76,8 +78,8 @@
 #### 3. Divide The Problem
 
 -   Dividing the problem into smaller chunks can lower difficulty by an order of magnitude!
-    -   ✅ Sort files into 2 piles of A-M and N-Z, then alphabetizing.
-    -   ❌ Alphabetize every file individually, one after another.
+    -   ❌ Alphabetize 100 files individually, one after another.
+    -   ✅ Sort files into 2 piles, A-M and N-Z, before alphabetizing.
 
 ##### Sliding Tile Puzzles
 
@@ -89,14 +91,14 @@
 #### 4. Start With What You Know
 
 -   Start with what you can do and work outward from there.
-    -   Partial solutions often inspire solutions for other aspects of the problem.
--   Try to make repairs with your tools before going to the hardware store for new ones.
+    -   Partial solutions often inspire solutions elsewhere.
+-   Try to make repairs with the tools you have before purchasing new ones.
 
 ##### Sudoku
 
--   Constraints are your friend; look for the **most constrained variable**.
-    -   They eliminate choices and simplify the possible solution.
--   **most constrained variable**: the variable that has the lowest number of possible values (the most restrictive consideration).
+-   Constraints are your friend; look for the most constrained variable first.
+    -   They eliminate choices and simplify possible solutions.
+-   **most constrained variable**: the variable that has the lowest number of possible values (i.e., the most restrictive consideration).
 -   Start with what's obvious.
     -   If you can solve part of a problem, do it!
 
@@ -123,6 +125,6 @@
 
 -   Frustration is an excuse to continue to fail.
     -   Take a real break and don't think about the problem.
-    -   Focus your attention on another problem and return later.
+    -   Or focus your attention on another problem and return to the original problem later.
 -   Never forget the first rule: Always have a plan.
-    -   If your original plan doesn't pan out, time to make another plan. And repeat.
+    -   If your original plan doesn't pan out, make another plan. And repeat.
