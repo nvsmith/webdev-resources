@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.08
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.24
 
 ## Table Of Contents
 
@@ -474,9 +474,11 @@ export default Title;
 
 -   **Separation of Conerns (SoC)**: the process of dividing code into specific, singular, and well-defined tasks.
 -   **Presentational Components**: components for how the UI looks; render logic.
-    -   Receive data and callbacks via props, then use props to produce JSX.
+    -   Receive data and callbacks via props, then use props to produce JSX. (Tidier option: use `createContext` hook instead.)
 -   **Container Components** : components for data organization and usage; business logic.
     -   Provide data for updating data models.
+    -   As an alternative to prop drilling, use the `createContext` hook to wrap your entire app (or specific parts of it) within a data context that provides values to your components.
+        -   This greatly reduces code clutter and the need to manage all the layers of props drilling required for nested components.
 
 #### Defining Presentational Components
 
