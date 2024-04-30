@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.24
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.30
 
 ## Table Of Contents
 
@@ -34,6 +34,9 @@
             -   [7. Execute Your Scripts](#7-execute-your-scripts)
         -   [Option C: Cloning Existing React Projects](#option-c-cloning-existing-react-projects)
             -   [Cloning From GitHub](#cloning-from-github)
+    -   [React Development Quickstart Guide](#react-development-quickstart-guide)
+        -   [Begin Development](#begin-development)
+        -   [End/Pause Development](#endpause-development)
     -   [Uninstalling React](#uninstalling-react)
     -   [UI Layout](#ui-layout)
         -   [Installing React Grid (Optional)](#installing-react-grid-optional)
@@ -310,6 +313,43 @@ git remote rename origin upstream
 ```
 
 > Renaming the origin allows you to have a connection to the codebase while leaving the origin connection free if you decide to create your own repo later.
+
+<br>
+
+## React Development Quickstart Guide
+
+After you have installed React, preferably with the **Create React App** (Installation Option A above), you can start/resume development anytime following these general steps:
+
+### Begin Development
+
+Open 3 integrated terminal tabs on your root directory. Keep all 3 running in the background during your development work:
+
+**Terminal 1:** runs your server environment, e.g. json-server:
+
+-   `npx json-server -p 3500 -w data/db.json`
+    -   `-p`: port
+    -   `-w`: watch for changes (i.e. database)
+
+**Terminal 2:** executes your React start script, opens your app in the browser, and watches for changes:
+
+-   `npm run start`
+
+**Terminal 3:** general purpose terminal for any development work and Git tracking:
+
+-   Check the status before resuming work: `git status`.
+-   Make sure you are NOT working on the main branch; checkout a feature or development branch: `git checkout development`.
+-   Add and comment changes frequently during development: `git add . && git commit -m "Comment goes here"`.
+
+### End/Pause Development
+
+1. Check status: `git status`.
+2. Add and commit all changes: `git add . && git commit -m "Comment goes here"`.
+3. Push all changes to your remote: `git push`.
+4. Checkout your main branch: `git checkout main`.
+5. Check for a clean working tree status on main before any merges: `git status`.
+6. Merge your development branch into the main branch: `git merge development`.
+7. Push your update main to remote: `git push`.
+8. Kill all processes by executing `Ctrl+C` in each terminal.
 
 <br>
 
