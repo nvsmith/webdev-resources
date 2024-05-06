@@ -1,44 +1,44 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.10
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.05
 
-## Table of Contents
+-   [Git Cheatsheet](#git-cheatsheet)
+    -   [General Notes](#general-notes)
+        -   [Best Practices](#best-practices)
+        -   [Comment Styles](#comment-styles)
+        -   [WordPress Usage](#wordpress-usage)
+    -   [Git Installation Or Upgrading](#git-installation-or-upgrading)
+    -   [Version Control Configuration](#version-control-configuration)
+        -   [Initialize Local Git Repo](#initialize-local-git-repo)
+        -   [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
+    -   [Version Control Removal](#version-control-removal)
+        -   [Remove Local Git Tracking](#remove-local-git-tracking)
+        -   [Remove Remote Tracking](#remove-remote-tracking)
+    -   [View Branches](#view-branches)
+    -   [Creating \& Modifying Branches](#creating--modifying-branches)
+        -   [Rename An Existing Local Branch](#rename-an-existing-local-branch)
+        -   [Create A New Branch](#create-a-new-branch)
+        -   [Clone A Repo](#clone-a-repo)
+        -   [Rename a Remote Repo](#rename-a-remote-repo)
+        -   [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
+            -   [Fetch vs. Pull](#fetch-vs-pull)
+    -   [Comparing Branches \& Commits](#comparing-branches--commits)
+        -   [Output Unique Commits](#output-unique-commits)
+        -   [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
+        -   [Compare Unique Commits](#compare-unique-commits)
+    -   [Merges \& Conflicts](#merges--conflicts)
+        -   [Merging Branches](#merging-branches)
+        -   [Merge Conflicts](#merge-conflicts)
+    -   [Scratch That: Reversing Changes \& Deleting Branches](#scratch-that-reversing-changes--deleting-branches)
+        -   [Undo Simple File Edits](#undo-simple-file-edits)
+        -   [Delete Local Branch](#delete-local-branch)
+        -   [Delete Remote Branch](#delete-remote-branch)
+    -   [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
+        -   [Rollback \& Reset Branches To Match One Another](#rollback--reset-branches-to-match-one-another)
+    -   [Hosting on GitHub Pages](#hosting-on-github-pages)
+        -   [Deploying React Apps On GitHub Pages](#deploying-react-apps-on-github-pages)
 
-- [Git Cheatsheet](#git-cheatsheet)
-  - [Table of Contents](#table-of-contents)
-  - [General Notes](#general-notes)
-    - [Best Practices](#best-practices)
-    - [Comment Styles](#comment-styles)
-    - [WordPress Usage](#wordpress-usage)
-  - [Git Installation Or Upgrading](#git-installation-or-upgrading)
-  - [Version Control Configuration](#version-control-configuration)
-    - [Initialize Local Git Repo](#initialize-local-git-repo)
-    - [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
-  - [Version Control Removal](#version-control-removal)
-    - [Remove Local Git Tracking](#remove-local-git-tracking)
-    - [Remove Remote Tracking](#remove-remote-tracking)
-  - [Creating \& Modifying Branches](#creating--modifying-branches)
-    - [Rename An Existing Local Branch](#rename-an-existing-local-branch)
-    - [Create A New Branch](#create-a-new-branch)
-    - [Clone A Repo](#clone-a-repo)
-    - [Rename a Remote Repo](#rename-a-remote-repo)
-    - [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
-      - [Fetch vs. Pull](#fetch-vs-pull)
-  - [Comparing Branches \& Commits](#comparing-branches--commits)
-    - [Output Unique Commits](#output-unique-commits)
-    - [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
-    - [Compare Unique Commits](#compare-unique-commits)
-  - [Merges \& Conflicts](#merges--conflicts)
-    - [Merging Branches](#merging-branches)
-    - [Merge Conflicts](#merge-conflicts)
-  - [Scratch That: Reversing Changes \& Deleting Branches](#scratch-that-reversing-changes--deleting-branches)
-    - [Undo Simple File Edits](#undo-simple-file-edits)
-    - [Delete Local Branch](#delete-local-branch)
-    - [Delete Remote Branch](#delete-remote-branch)
-  - [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
-  - [Hosting on GitHub Pages](#hosting-on-github-pages)
-
-<br>
+<hr>
 
 ## General Notes
 
@@ -181,6 +181,21 @@ git remove remote
 
 <br>
 
+## View Branches
+
+```bash
+# View local branches
+git branch
+
+# View remote branches
+git branch -r
+
+# View all branches
+git branch -a
+```
+
+<br>
+
 ## Creating & Modifying Branches
 
 ### Rename An Existing Local Branch
@@ -281,9 +296,8 @@ git rev-list --left-right --count origin/main...origin/devBranch
 git rev-list --left-right --pretty=oneline main...devBranch
 
 # Example Output:
-# <1122...unique commit 2 on main
-# <aabb...unique commit 1 on main
-# >1a2b...unique commit 1 on devBranch
+# <abc123...unique commit 2 on main
+# >def456...unique commit 1 on devBranch
 ```
 
 > -   `<` SHA points to left branch (in this case, `main`)
@@ -368,6 +382,9 @@ git branch -D localBranchName
 ### Delete Remote Branch
 
 ```bash
+# View remote branches
+git branch -r
+
 # Delete remote branch - Option 1
 git push origin --delete remoteBranchName
 
@@ -384,19 +401,42 @@ git push origin :remoteBranchName
 
 ## Rolling Back The Clock: Revert, Amend, Rebase, Clean
 
-???
+**⚠️ Warning: Resetting is destructive. Make sure you're ok with losing the data before you proceed! ⚠️**
 
-    git revert: This command reverts the changes of a commit. it maintains track record in logs.
+**Git Revert**: undo changes made in a commit by creating a new commit that reverses the changes.
 
-    git reset: This command reverts the changes of a commit. it does not maintain track record in logs i.e. reset to the reverted commit. Note: It an destructive function. have to be careful using this command.
+```bash
+git revert abc123       # Undo changes introduced by commit hash abc123
+```
 
-    git reset --soft HEAD^ Undo last commit, put changes into staging
+**Git Reset**: reset the current HEAD to a specified state, which can be a previous commit or the staging area.
 
-    git reset --hard HEAD^ Undo last commit and all changes
+-   Optionally preserves changes in the working directory.
 
-    git reset --hard HEAD^^ Undo last 2 commits and all changes
+```bash
+# Replace abc123 with the hash (ID) of the commit you want to keep
+git reset abc123            # Reset to the specified commit
+git reset --soft abc123     # Reset and keep changes staged
+git reset --mixed abc123    # (Default) Reset and unstage changes
+git reset --hard abc123     # Reset and discard changes
+git reset --hard HEAD^      # Undo last commit and all changes
+git reset --hard HEAD^^     # Undo last 2 commits and all changes
+```
 
-    git commit --amend where amend means add to the last commit. Sometimes we forgot to add files to commit. for example abc.txt file was forgot, we can add as follows: git add abc.txt and git commit --amend -m "New commit message"
+### Rollback & Reset Branches To Match One Another
+
+```bash
+# Checkout the branch that you want to rollback (i.e. development)
+git checkout development
+
+## Reset the checked out branch to match another branch (i.e. main)
+git reset --hard main
+
+# Force push the changes to your remote branch if desired
+git push origin development --force
+```
+
+<br>
 
 ## Hosting on GitHub Pages
 
@@ -412,3 +452,10 @@ git push origin gh-pages
 # Click the Settings button (gear icon in the top menu)
 # Scroll down  to the Pages section to view/modify any settings
 ```
+
+### Deploying React Apps On GitHub Pages
+
+See [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages) for further details.
+
+1. Follow the usual steps to connect your local repo to GitHub.
+2.

@@ -1,6 +1,6 @@
 # React Notes
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.04.30
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.01
 
 ## Table Of Contents
 
@@ -20,6 +20,7 @@
         -   [Controlled Components](#controlled-components)
     -   [Installing React](#installing-react)
         -   [Option A: Installing React Automatically](#option-a-installing-react-automatically)
+            -   [Installation Cleanup](#installation-cleanup)
             -   [The Create React App Toolchain](#the-create-react-app-toolchain)
             -   [Important Files \& Directories](#important-files--directories)
         -   [Option B: Installing React Manually](#option-b-installing-react-manually)
@@ -159,15 +160,27 @@ Use the **Create React App** toolchain to spin up a React application quickly us
 4. Your project can now be viewed in your browser:
     1. `cd project-name`
     2. `npm run start`
-5. For simple projects, you can delete the following:
-    1. **src/App.test.js**
-    2. **src/reportWebVitals.js**
-    3. Open **src/index.js** and delete:
-        - `import reportWebVitals from './reportWebVitals';`
-        - `reportWebVitals();`.
-    4. **src/setupTests.js**
-    5. **src/logo.svg**
-        - Delete any any logo code in **App.js**
+
+#### Installation Cleanup
+
+For simple projects, you can delete the following files:
+
+1. **src/App.test.js**
+2. **src/reportWebVitals.js**
+3. **src/setupTests.js**
+4. **src/logo.svg**
+
+Open up the following files to delete unnecessary code blocks:
+
+1. **src/index.js**:
+    - `import reportWebVitals from './reportWebVitals';`
+    - `reportWebVitals();`
+2. **App.js**:
+    - Delete any any logo code.
+
+Uninstall any unused dependencies from your **package.json** file:
+
+-   `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 
 #### The Create React App Toolchain
 

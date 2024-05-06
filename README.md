@@ -2,24 +2,22 @@
 
 <a href="https://tecnate.dev" target="_blank" rel="author">Tecnate (c) 2024</a>
 
-## Table of Contents
-
-- [Web Development Resources](#web-development-resources)
-  - [Table of Contents](#table-of-contents)
-  - [About The Project](#about-the-project)
-  - [Usage](#usage)
-  - [Roadmap](#roadmap)
-  - [License](#license)
-  - [Contact](#contact)
-  - [Resource List](#resource-list)
-    - [CSS](#css)
-    - [Git](#git)
-    - [HTML](#html)
-    - [JavaScript](#javascript)
-      - [React](#react)
-    - [Markdown](#markdown)
-    - [Terminal](#terminal)
-    - [Think Like A Programmer](#think-like-a-programmer)
+-   [Web Development Resources](#web-development-resources)
+    -   [About The Project](#about-the-project)
+    -   [Usage](#usage)
+    -   [Roadmap](#roadmap)
+    -   [License](#license)
+    -   [Contact](#contact)
+    -   [Resource List](#resource-list)
+        -   [CSS](#css)
+        -   [Git](#git)
+        -   [HTML](#html)
+        -   [JavaScript](#javascript)
+            -   [React](#react)
+        -   [Markdown](#markdown)
+        -   [Terminal](#terminal)
+        -   [Think Like A Programmer](#think-like-a-programmer)
+        -   [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -37,7 +35,7 @@ Documents will typically be written in Markdown. As such, they should be easily 
 
 ## Roadmap
 
-I intend to continually add to this project. However, there is no grand, 5-year plan here; I go where my curiosity takes me and add to my repository of knowledge as needed.
+I continually add to this project; I go where my curiosity takes me and add to my repository of knowledge as needed. If you would like to contribute or if you'd like a specific guide to be created, feel free to reach out to me and let me know.
 
 <br>
 
@@ -91,3 +89,7 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### Think Like A Programmer
 
 1. [Think Like A Programmer](./think-like-a-programmer.md)
+
+### Visual Studio Code
+
+1. [VSCode Shortcuts for macOS](vscode-shortcuts.md)
