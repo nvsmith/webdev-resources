@@ -3,50 +3,58 @@
 <a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.05
 
 -   [VSCode Shortcuts for macOS](#vscode-shortcuts-for-macos)
+    -   [About](#about)
     -   [Common Mac Keyboard Symbols](#common-mac-keyboard-symbols)
     -   [General](#general)
-    -   [Basic editing](#basic-editing)
-    -   [Multi-cursor and selection](#multi-cursor-and-selection)
-    -   [Search and replace](#search-and-replace)
-    -   [Rich languages editing](#rich-languages-editing)
+    -   [Basic Editing](#basic-editing)
+    -   [Rich Languages \& Code Editing](#rich-languages--code-editing)
+    -   [Multi-cursor \& Selection](#multi-cursor--selection)
+    -   [Search \& Replace](#search--replace)
     -   [Navigation](#navigation)
-    -   [Editor management](#editor-management)
-    -   [File management](#file-management)
+    -   [Editor Management](#editor-management)
+    -   [File Management](#file-management)
     -   [Display](#display)
     -   [Debug](#debug)
-    -   [Integrated terminal](#integrated-terminal)
+    -   [Terminal](#terminal)
+
+## About
+
+I Markdown-ed and Git-ified this document so that I could refer to, edit, and maintain a personalized list of my shortcuts within VSCode without the need to open another program.
+
+Note: Any _italicized shortcuts in this guide_ represent shortcuts specific to extensions, dependencies, or my personalized keybindings. Otherwise, you can assume that what you see are defaults.
+
+If you would like to view the official shortcut list maintained by Visual Studio Code, type `⌘K ⌘R` and a PDF link should open in your browser.
 
 ## Common Mac Keyboard Symbols
 
 -   `⌘` / `` Command (Cmd)
 -   `⌥` Option/Alt
 -   `⌃` Control (Ctrl)
-    -   This is **not** the `^` caret symbol (the special character on the "6" key on a standard US keyboard).
+    -   **Not `^` caret** (the "6" key special character on a standard US keyboard)
 -   `⇧` Shift
+-   `↑` / `↓` Up/Down Arrows
+-   `→` / `←` Right/Left Arrows
+-   `Enter` Enter/Return
+-   `Space` Spacebar
 
 ## General
-
-> Note: any _italicized shortcuts in this guide_ represent shortcuts specific to extensions, dependencies, or my personalized keybindings. Otherwise, you can assume that all shortcuts are VSCode defaults.
 
 -   `⇧⌘P`, `F1` Show Command Palette
 -   `⌘P` Quick Open, Go to File...
 -   `⇧⌘N` New window/instance
 -   `⌘W` Close window/instance
 -   `⌘,` User Settings
--   `⌘K ⌘S` View/edit Keyboard Shortcuts
-    -   (Or search "keyboard shortcuts" in the Command Palette)
+-   `⌘K ⌘S` View/edit VSCode Keyboard Shortcuts
+    -   (Or open the Command Palette (`⇧⌘P`) and search "keyboard shortcuts".)
 
-## Basic editing
+## Basic Editing
 
--   `⌘X` Cut line (empty selection)
--   `⌘C` Copy line (empty selection)
 -   `⌥↓` / `⌥↑` Move line down/up
 -   `⇧⌥↓` / `⇧⌥↑` Copy line down/up
 -   `⇧⌘K` **Delete line**
 -   `⌘Enter` / `⇧⌘Enter` Insert line below/above
 -   `⇧⌘\` **Jump to matching bracket**
 -   `⌘]` / `⌘[` Indent/outdent line
--   `Home` / `End` Go to beginning/end of line
 -   `⌘↑` / `⌘↓` Go to beginning/end of file
 -   `⌃PgUp` / `⌃PgDn` Scroll line up/down
 -   `⌘PgUp` / `⌘PgDn` Scroll page up/down
@@ -57,7 +65,22 @@
 -   `⇧⌥A` Toggle block comment
 -   `⌥Z` **Toggle word wrap**
 
-## Multi-cursor and selection
+## Rich Languages & Code Editing
+
+-   `⌃Space` **Trigger intellisense suggestion**
+-   `⇧⌘Space` **Trigger parameter hints**
+-   `⇧⌥F` Format document
+-   `⌘K ⌘F` Format selection
+-   `F12` Go to Definition
+-   `⌥F12` Peek Definition
+-   `⌘K F12` Open Definition to the side
+-   `⌘.` Quick Fix
+-   `⇧F12` Show References
+-   `F2` Rename Symbol
+-   `⌘K ⌘X` Trim trailing whitespace
+-   `⌘K M` Change file language
+
+## Multi-cursor & Selection
 
 -   `⌥ + click` Insert cursor
 -   `⌥⌘↑` / `⌥⌘↓` **Insert cursor above/below**
@@ -73,30 +96,14 @@
 -   `⇧⌥⌘PgUp` Column (box) selection page up
 -   `⇧⌥⌘PgDn` Column (box) selection page down
 
-## Search and replace
+## Search & Replace
 
--   `⌘F` Find
 -   `⌥⌘F` Replace
 -   `⌘G` / `⇧⌘G` Find next/previous
 -   `⌥Enter` Select all occurrences of Find match
 -   `⌘D` Add selection to next Find match
 -   `⌘K ⌘D` Move last selection to next Find match
 -   `⇧⌘L` **Highlight all string instances**
-
-## Rich languages editing
-
--   `⌃Space`, `⌘I` **Trigger intellisense suggestion**
--   `⇧⌘Space` **Trigger parameter hints**
--   `⇧⌥F` Format document
--   `⌘K ⌘F` Format selection
--   `F12` Go to Definition
--   `⌥F12` Peek Definition
--   `⌘K F12` Open Definition to the side
--   `⌘.` Quick Fix
--   `⇧F12` Show References
--   `F2` Rename Symbol
--   `⌘K ⌘X` Trim trailing whitespace
--   `⌘K M` Change file language
 
 ## Navigation
 
@@ -112,7 +119,7 @@
 -   `⌃-` / `⌃⇧-` Go back/forward
 -   `⌃⇧M` Toggle Tab moves focus
 
-## Editor management
+## Editor Management
 
 -   `⌘W` Close editor
 -   `⌘K F` Close folder
@@ -122,15 +129,11 @@
 -   `⌘K ⇧⌘←` / `⌘K ⇧⌘→` Move editor left/right
 -   `⌘K ←` / `⌘K →` Move active editor group
 
-## File management
+## File Management
 
--   `⌘N` New File
--   `⌘O` Open File...
--   `⌘S` Save
 -   `⇧⌘S` Save As...
 -   `⌥⌘S` Save All
--   `⌘W` Close
--   `⌘K` ⌘W Close All
+-   `⌘K ⌘W` Close All
 -   `⇧⌘T` Reopen closed editor
 -   `⌘K` Enter Keep preview mode editor open
 -   `⌃Tab` / `⌃⇧Tab` Open next / previous
@@ -165,13 +168,11 @@
 -   `⇧F5` Stop
 -   `⌘K ⌘I` Show hover
 
-## Integrated terminal
+## Terminal
 
 -   `` ⌃` `` Show integrated terminal
     -   _`node fileName.js` Execute JavaScript in the terminal_
     -   _`⌘K Q` Toggle Quokka.js_
 -   `` ⌃⇧` `` Create new terminal
--   `⌘C` Copy selection
 -   `⌘↑` / `⌘↓` Scroll up/down
--   `PgUp` / `PgDn` Scroll page up/down
 -   `⌘Home` / `⌘End` Scroll to top/bottom
