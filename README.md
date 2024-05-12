@@ -1,6 +1,6 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate (c) 2024</a>
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.10
 
 -   [Web Development Resources](#web-development-resources)
     -   [About The Project](#about-the-project)
@@ -16,7 +16,7 @@
             -   [React](#react)
         -   [Markdown](#markdown)
         -   [Terminal](#terminal)
-        -   [Think Like A Programmer](#think-like-a-programmer)
+        -   [Books](#books)
         -   [Visual Studio Code](#visual-studio-code)
 
 <br>
@@ -75,8 +75,9 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 #### React
 
-1. [React Notes](JavaScript/React/react-notes.md)
-2. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
+1. [React For GitHub Pages](JavaScript/React/react-for-github-pages.md)
+2. [React Notes](JavaScript/React/react-notes.md)
+3. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
 
 ### Markdown
 
@@ -86,7 +87,7 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 1. [Mac Terminal Cheatsheet](Terminal/mac-terminal-cheatsheet.md)
 
-### Think Like A Programmer
+### Books
 
 1. [Think Like A Programmer](./think-like-a-programmer.md)
 

@@ -1,6 +1,6 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.05
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.12
 
 -   [Git Cheatsheet](#git-cheatsheet)
     -   [General Notes](#general-notes)
@@ -11,6 +11,7 @@
     -   [Version Control Configuration](#version-control-configuration)
         -   [Initialize Local Git Repo](#initialize-local-git-repo)
         -   [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
+        -   [Set An Upstream (Remote) Branch](#set-an-upstream-remote-branch)
     -   [Version Control Removal](#version-control-removal)
         -   [Remove Local Git Tracking](#remove-local-git-tracking)
         -   [Remove Remote Tracking](#remove-remote-tracking)
@@ -30,19 +31,22 @@
         -   [Merging Branches](#merging-branches)
         -   [Merge Conflicts](#merge-conflicts)
     -   [Scratch That: Reversing Changes \& Deleting Branches](#scratch-that-reversing-changes--deleting-branches)
-        -   [Undo Simple File Edits](#undo-simple-file-edits)
+        -   [Undo/Ignore Simple File Changes](#undoignore-simple-file-changes)
+        -   [Undo/Ignore Changes To All Files](#undoignore-changes-to-all-files)
         -   [Delete Local Branch](#delete-local-branch)
         -   [Delete Remote Branch](#delete-remote-branch)
     -   [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
         -   [Rollback \& Reset Branches To Match One Another](#rollback--reset-branches-to-match-one-another)
     -   [Hosting on GitHub Pages](#hosting-on-github-pages)
-        -   [Deploying React Apps On GitHub Pages](#deploying-react-apps-on-github-pages)
+        -   [GitHub Pages \& React](#github-pages--react)
 
 <hr>
 
 ## General Notes
 
 In Git branching nomenclature, **main** and **master** are synonymous. This guide will use **main** to refer to the main/master branch (or trunk) of the development chain.
+
+> ⚠️ Note: assume that codeblocks in this guide show an ordered sequence of steps to follow unless otherwise specified.
 
 ### Best Practices
 
@@ -136,9 +140,24 @@ git remote -v
 
 > The `-u` tag in `git push -u origin main` is used to set the origin as the upstream remote in your git config. It is only needed the first time you push.
 >
+> -   `-u`: equivalent to `--set-upstream`
 > -   As you push with the `-u` tag option, the local branch (**main**) is linked to the remote server (**origin**) automatically with a matching branch name **(main)**.
 
 View more about Remotes at [Git Basics - Working with Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
+### Set An Upstream (Remote) Branch
+
+```bash
+# Checkout the desired local branch that you'd like to connect to a remote upstream
+git checkout development
+
+# Set the upstream of the local branch (development) to the remote server (origin)
+git push -u origin development
+
+# View all remote branches
+git branch -r
+# You should see 'origin/development' listed
+```
 
 <br>
 
@@ -360,11 +379,18 @@ git push origin main
 
 ## Scratch That: Reversing Changes & Deleting Branches
 
-### Undo Simple File Edits
+### Undo/Ignore Simple File Changes
 
 ```bash
-# Discard uncommitted edits and revert file to its prior commit state
+# Discard uncommitted edits & revert a file to prior commit state
 git checkout -- filename.abc
+```
+
+### Undo/Ignore Changes To All Files
+
+```bash
+# Discard all file changes & revert everything to prior commit
+git checkout .
 ```
 
 ### Delete Local Branch
@@ -401,12 +427,13 @@ git push origin :remoteBranchName
 
 ## Rolling Back The Clock: Revert, Amend, Rebase, Clean
 
-**⚠️ Warning: Resetting is destructive. Make sure you're ok with losing the data before you proceed! ⚠️**
+> ⚠️ Warning: Resetting is destructive. Make sure you're ok with losing the data before you proceed!
 
 **Git Revert**: undo changes made in a commit by creating a new commit that reverses the changes.
 
 ```bash
-git revert abc123       # Undo changes introduced by commit hash abc123
+# Undo changes introduced by commit hash abc123
+git revert abc123
 ```
 
 **Git Reset**: reset the current HEAD to a specified state, which can be a previous commit or the staging area.
@@ -414,13 +441,14 @@ git revert abc123       # Undo changes introduced by commit hash abc123
 -   Optionally preserves changes in the working directory.
 
 ```bash
+# This is a codeblock of options, not sequences
 # Replace abc123 with the hash (ID) of the commit you want to keep
-git reset abc123            # Reset to the specified commit
-git reset --soft abc123     # Reset and keep changes staged
-git reset --mixed abc123    # (Default) Reset and unstage changes
-git reset --hard abc123     # Reset and discard changes
-git reset --hard HEAD^      # Undo last commit and all changes
-git reset --hard HEAD^^     # Undo last 2 commits and all changes
+git reset abc123            # Reset to specified commit
+git reset --soft abc123     # Reset & keep changes staged
+git reset --mixed abc123    # (Default) Reset & unstage changes
+git reset --hard abc123     # Reset & discard changes
+git reset --hard HEAD^      # Undo last commit & all changes
+git reset --hard HEAD^^     # Undo last 2 commits & all changes
 ```
 
 ### Rollback & Reset Branches To Match One Another
@@ -453,9 +481,6 @@ git push origin gh-pages
 # Scroll down  to the Pages section to view/modify any settings
 ```
 
-### Deploying React Apps On GitHub Pages
+### GitHub Pages & React
 
-See [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages) for further details.
-
-1. Follow the usual steps to connect your local repo to GitHub.
-2.
+See the [React For GitHub Pages](../JavaScript/React/react-for-github-pages.md) guide to get static React applications running on GitHub.
