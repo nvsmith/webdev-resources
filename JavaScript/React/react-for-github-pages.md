@@ -1,6 +1,6 @@
 # React For GitHub Pages
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.12
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.14
 
 -   [React For GitHub Pages](#react-for-github-pages)
     -   [About](#about)
@@ -62,7 +62,7 @@ Decide which you'd rather do for further development:
     - Project site (typical): `https://{username}.github.io/{repo-name}`
     - User site (less typical): `https://{username}.github.io`
 
-    ```json
+    ```js
     // package.json file example
     {
         "name": "my-app",
@@ -75,7 +75,7 @@ Decide which you'd rather do for further development:
 
 5. Add these `predeploy` and `deploy` properties to the _scripts_ object to your **package.json** file:
 
-    ```json
+    ```js
     // Only add predeploy & deploy properties, leave everything else alone
      "scripts": {
         "predeploy": "npm run build",
@@ -99,7 +99,7 @@ Decide which you'd rather do for further development:
         git push -u origin gh-pages
     ```
 
-    - Note: some online documents say that running `npm deploy` will automatically create the **gh-pages** branch, but it's never worked for me. So you can just do it manually before running deployment if you experience the same issues.
+    - ⚠️ Some online documents say that running `npm deploy` will automatically create the **gh-pages** branch, but it's never worked for me. So you can just do it manually before running deployment if you experience the same issues.
 
 10. Checkout your **main** branch again and deploy your app to GitHub pages:
 
@@ -116,6 +116,8 @@ Decide which you'd rather do for further development:
     - The `predeploy` script you added creates a distributable React app in a folder name **build**, which contains a folder named **static**.
     - The `deploy` script you added pushes the **static** folder to your remote **gh-pages** branch along with the commit SHA and comment; this does _not_ push to your **main** branch.
 
+    > `npm run deploy`: This command is not a standard built-in script in React projects but is often used to automate the deployment process to hosting services (like GitHub Pages). It includes the standard `npm run build` command (to prepare app for production) and then deploy the contents of the build directory to the hosting service.
+
 11. In your browser, navigate to your GitHub repo > Settings (upper right on desktop) > Pages (under Code and Automation). Set the configuration like so if it isn't already:
     - Branch: `gh-pages`
     - Folder: `/ (root)`
@@ -126,14 +128,16 @@ Decide which you'd rather do for further development:
 
 ## Continuing Development
 
-Whether you decide to commit the changes made during deployment will depend on whether or you want the source code to be made available or not:
+Whether you decide to commit the changes made during deployment will depend on whether or you want the source code to be made available or not.
+
+You do not have to commit/sync changes to your **gh-pages** branches once your start deploying. In fact, you can delete the local **gh-pages** branch if you want to, since the remote branch will always be built directly from a deployment on **main**.
 
 ### Option 1: Publish Source Code
 
-1. Back in terminal, commit the deployment changes to your **main** branch (i.e. the **build** directory creation) and push to your remote:
+1. Back in terminal, commit the deployment build changes to **main** and push to remote:
 
     ```bash
-    # Make sure no other unexpected changes occurred on main branch
+    # Check you're on main & only have build changes
     git status
 
     # Add files and commit changes
@@ -159,20 +163,27 @@ Whether you decide to commit the changes made during deployment will depend on w
     - Or checkout an entirely new branch for future development.
     - Or rebase
 
-3. Repeat the workflow cycle.
-
-<br>
+3. And repeat the develpment-deployment cycle:
+    - Develop, test, and commit code on **development**.
+    - Merge code into **main**.
+    - Deploy.
+    - Commit and push changes made by deployment.
+    - Pull everything onto an existing or new **development** branch.
 
 ### Option 2: Keep Source Code Private
 
 1. Back in terminal, ignore any changes made during deployment.
 
     ```bash
-    # Ensure no unexpected changes besides the new build directory that you want to ignore
+    # Check you're on main & only have build changes
     git status
 
     # Discard all changes and revert to prior commit state
     git checkout .
     ```
 
-2. Repeat the workflow cycle.
+2. And repeat the cycle of development:
+    - Develop, test, and commit code on **development**.
+    - Merge code into **main**.
+    - Deploy.
+    - Don't commit any changes made by deployment.
