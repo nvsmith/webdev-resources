@@ -1,6 +1,6 @@
 # Markdown Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.03.018
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-05-19
 
 > VSCode Markdown Preview Shortcut: `⌘K V` (note space).
 >
@@ -8,24 +8,24 @@
 
 ## Table of Contents
 
-- [Markdown Cheatsheet](#markdown-cheatsheet)
-  - [Table of Contents](#table-of-contents)
-  - [About This Document](#about-this-document)
-- [# h1 heading](#-h1-heading)
-  - [## h2 heading](#-h2-heading)
-    - [### h3 heading](#-h3-heading)
-      - [#### h4 heading](#-h4-heading)
-        - [##### h5 heading](#-h5-heading)
-          - [###### h6 heading](#-h6-heading)
-  - [Text Elements](#text-elements)
-    - [Blockquotes](#blockquotes)
-  - [Typographic Replacements](#typographic-replacements)
-  - [Links \& Images](#links--images)
-  - [Code](#code)
-  - [Horizontal Rules \& Breaks](#horizontal-rules--breaks)
-  - [Lists](#lists)
-    - [Unordered](#unordered)
-    - [Ordered](#ordered)
+-   [Markdown Cheatsheet](#markdown-cheatsheet)
+    -   [Table of Contents](#table-of-contents)
+    -   [About This Document](#about-this-document)
+-   [# h1 heading](#-h1-heading)
+    -   [## h2 heading](#-h2-heading)
+        -   [### h3 heading](#-h3-heading)
+            -   [#### h4 heading](#-h4-heading)
+                -   [##### h5 heading](#-h5-heading)
+                    -   [###### h6 heading](#-h6-heading)
+    -   [Text Elements](#text-elements)
+        -   [Blockquotes](#blockquotes)
+    -   [Typographic Replacements](#typographic-replacements)
+    -   [Links \& Images](#links--images)
+    -   [Code](#code)
+    -   [Horizontal Rules \& Breaks](#horizontal-rules--breaks)
+    -   [Lists](#lists)
+        -   [Unordered](#unordered)
+        -   [Ordered](#ordered)
 
 <br>
 
@@ -67,6 +67,7 @@ Paragraphs are the default. No special tags required for this magic!
 -   \_Italic Text\_ = _Italic Text_
 -   \<u>Underlined Text\</u> = <u>Underlined Text</u>
 -   \~~Strikethrough Text\~~ = ~~Strikethrough Text~~
+-   `⇧⌥-` — (Em Dash)
 
 ### Blockquotes
 
@@ -112,7 +113,9 @@ Alternatively, drag an image while holding SHIFT into your document
 ## Code
 
 ```js
-console.log("Remember to include your code language after the backticks above.");
+console.log(
+    "Remember to include your code language after the backticks above."
+);
 ```
 
 <br>

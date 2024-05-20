@@ -1,16 +1,16 @@
 # React For GitHub Pages
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.14
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.17
 
--   [React For GitHub Pages](#react-for-github-pages)
-    -   [About](#about)
-    -   [General Workflow](#general-workflow)
-        -   [Initial Deployment](#initial-deployment)
-        -   [Continual Development \& Deployment](#continual-development--deployment)
-    -   [Deployment Process](#deployment-process)
-    -   [Continuing Development](#continuing-development)
-        -   [Option 1: Publish Source Code](#option-1-publish-source-code)
-        -   [Option 2: Keep Source Code Private](#option-2-keep-source-code-private)
+- [React For GitHub Pages](#react-for-github-pages)
+  - [About](#about)
+  - [General Workflow](#general-workflow)
+    - [Initial Deployment](#initial-deployment)
+    - [Continual Development \& Deployment](#continual-development--deployment)
+  - [Deployment Process](#deployment-process)
+  - [Continuing Development](#continuing-development)
+    - [Option 1: Publish Source Code](#option-1-publish-source-code)
+    - [Option 2: Keep Source Code Private](#option-2-keep-source-code-private)
 
 <hr>
 <br>
@@ -180,6 +180,12 @@ You do not have to commit/sync changes to your **gh-pages** branches once your s
 
     # Discard all changes and revert to prior commit state
     git checkout .
+
+    # Remove untracked files and directories
+    git clean -df
+
+    # Move back to a development or feature branch to continue working
+    git checkout development
     ```
 
 2. And repeat the cycle of development:
