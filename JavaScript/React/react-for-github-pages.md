@@ -2,15 +2,15 @@
 
 <a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.17
 
-- [React For GitHub Pages](#react-for-github-pages)
-  - [About](#about)
-  - [General Workflow](#general-workflow)
-    - [Initial Deployment](#initial-deployment)
-    - [Continual Development \& Deployment](#continual-development--deployment)
-  - [Deployment Process](#deployment-process)
-  - [Continuing Development](#continuing-development)
-    - [Option 1: Publish Source Code](#option-1-publish-source-code)
-    - [Option 2: Keep Source Code Private](#option-2-keep-source-code-private)
+-   [React For GitHub Pages](#react-for-github-pages)
+    -   [About](#about)
+    -   [General Workflow](#general-workflow)
+        -   [Initial Deployment](#initial-deployment)
+        -   [Continual Development \& Deployment](#continual-development--deployment)
+    -   [Deployment Process](#deployment-process)
+    -   [Continuing Development](#continuing-development)
+        -   [Option 1: Publish Source Code](#option-1-publish-source-code)
+        -   [Option 2: Keep Source Code Private](#option-2-keep-source-code-private)
 
 <hr>
 <br>
@@ -191,5 +191,8 @@ You do not have to commit/sync changes to your **gh-pages** branches once your s
 2. And repeat the cycle of development:
     - Develop, test, and commit code on **development**.
     - Merge code into **main**.
-    - Deploy.
-    - Don't commit any changes made by deployment.
+    - Push **main** to **remote**, then deploy to GitHub Pages with `npm run deploy`.
+    - Don't commit any changes made by deployment:
+        - Discard with `git checkout .`
+        - Remove untracked files with `git clean -df`
+    - Checkout **development** and continue working.

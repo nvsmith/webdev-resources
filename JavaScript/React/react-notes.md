@@ -525,7 +525,7 @@ export default Title;
 
 ### Presentational & Container Components
 
--   **Separation of Conerns (SoC)**: the process of dividing code into specific, singular, and well-defined tasks.
+-   **Separation of Concerns (SoC)**: the process of dividing code into specific, singular, and well-defined tasks.
 -   **Presentational Components**: components for how the UI looks; render logic.
     -   Receive data and callbacks via props, then use props to produce JSX. (Tidier option: use `createContext` hook instead.)
 -   **Container Components** : components for data organization and usage; business logic.
