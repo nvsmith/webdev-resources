@@ -1,6 +1,6 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.12
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-06
 
 -   [Git Cheatsheet](#git-cheatsheet)
     -   [General Notes](#general-notes)
@@ -148,8 +148,9 @@ View more about Remotes at [Git Basics - Working with Remotes](https://git-scm.c
 ### Set An Upstream (Remote) Branch
 
 ```bash
-# Checkout the desired local branch that you'd like to connect to a remote upstream
-git checkout development
+# Checkout the branch you want to connect to remote
+git checkout -b development # Option 1: create new branch
+git checkout development # Option 2: use existing branch
 
 # Set the upstream of the local branch (development) to the remote server (origin)
 git push -u origin development

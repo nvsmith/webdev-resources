@@ -1,6 +1,7 @@
-### Last updated: February 12, 2024 ###
+### Last updated: June 12, 2024
 
 ### Remove the following directories & files from Git tracking ###
+TODO.md
 
 # General 
 .DS_Store
@@ -35,4 +36,5 @@ Temporary Items
 .vscode
 JavaScript/scope-and-context.js
 Markdown/best-README-template.md
+Markdown/my-README-template.md
 AWS
