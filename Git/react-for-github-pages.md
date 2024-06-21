@@ -1,6 +1,6 @@
 # React For GitHub Pages
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.17
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-21
 
 -   [React For GitHub Pages](#react-for-github-pages)
     -   [About](#about)
@@ -43,6 +43,7 @@ Decide which you'd rather do for further development:
 
 -   Either commit changes made during deployment to **main**, push source code to make it available on GitHub, pull in changes to **development**, and repeat workflow cycle.
 -   Or ignore deployment changes, keep the source code private, and repeat workflow cycle.
+    -   For this option, the easiest way to keep your source code from being published is to add `/build` to your **.gitignore** file (explained in more detail below).
 
 <br>
 
@@ -171,6 +172,8 @@ You do not have to commit/sync changes to your **gh-pages** branches once your s
     - Pull everything onto an existing or new **development** branch.
 
 ### Option 2: Keep Source Code Private
+
+You can manually discard changes, as demonstrated below, or you can simply add `/build` to your **.gitignore** file.
 
 1. Back in terminal, ignore any changes made during deployment.
 
