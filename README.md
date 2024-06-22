@@ -1,23 +1,23 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024.05.10
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-21
 
--   [Web Development Resources](#web-development-resources)
-    -   [About The Project](#about-the-project)
-    -   [Usage](#usage)
-    -   [Roadmap](#roadmap)
-    -   [License](#license)
-    -   [Contact](#contact)
-    -   [Resource List](#resource-list)
-        -   [CSS](#css)
-        -   [Git](#git)
-        -   [HTML](#html)
-        -   [JavaScript](#javascript)
-            -   [React](#react)
-        -   [Markdown](#markdown)
-        -   [Terminal](#terminal)
-        -   [Books](#books)
-        -   [Visual Studio Code](#visual-studio-code)
+- [Web Development Resources](#web-development-resources)
+  - [About The Project](#about-the-project)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+  - [License](#license)
+  - [Contact](#contact)
+  - [Resource List](#resource-list)
+    - [CSS](#css)
+    - [Git](#git)
+    - [HTML](#html)
+    - [JavaScript](#javascript)
+      - [React](#react)
+    - [Markdown](#markdown)
+    - [Terminal](#terminal)
+    - [Books](#books)
+    - [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -63,6 +63,7 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 1. [Git Cheatsheet](Git/git-cheatsheet.md)
 2. [Git Ignore Template](Git/gitignore-template.txt)
+3. [React For GitHub Pages](Git/react-for-github-pages.md)
 
 ### HTML
 
@@ -75,9 +76,8 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 #### React
 
-1. [React For GitHub Pages](JavaScript/React/react-for-github-pages.md)
-2. [React Notes](JavaScript/React/react-notes.md)
-3. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
+1. [React Notes](JavaScript/React/react-notes.md)
+2. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
 
 ### Markdown
 
@@ -93,4 +93,4 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 ### Visual Studio Code
 
-1. [VSCode Shortcuts for macOS](vscode-shortcuts.md)
+1. [VSCode Shortcuts for Mac OS](vscode-shortcuts.md)
