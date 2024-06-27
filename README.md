@@ -1,6 +1,6 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-21
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-27
 
 - [Web Development Resources](#web-development-resources)
   - [About The Project](#about-the-project)
@@ -15,6 +15,7 @@
     - [JavaScript](#javascript)
       - [React](#react)
     - [Markdown](#markdown)
+    - [Math](#math)
     - [Terminal](#terminal)
     - [Books](#books)
     - [Visual Studio Code](#visual-studio-code)
@@ -82,6 +83,10 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### Markdown
 
 1. [Markdown Cheatsheet](Markdown/markdown-cheatsheet.md)
+
+### Math
+
+1. [Math Programming Cheatsheet](Math/math-programming-cheatsheet.md)
 
 ### Terminal
 
