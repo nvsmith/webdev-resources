@@ -14,9 +14,10 @@ TARGET_DIR="/path/to/target_directory"
 # Create the target directory if it doesn't exist
 mkdir -p "$TARGET_DIR"
 
-# Find all files in the source directory and it's subdirectories (recursively) and move them to the target directory
+# Find all files in the source directory and move them to the target directory
 find "$SOURCE_DIR" -type f -exec mv {} "$TARGET_DIR" \;
 
+# Show success message when complete
 echo "All files have been moved to $TARGET_DIR."
 ```
 
