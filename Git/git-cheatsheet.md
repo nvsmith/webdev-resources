@@ -1,6 +1,6 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-06
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 10 Sep 2024
 
 -   [Git Cheatsheet](#git-cheatsheet)
     -   [General Notes](#general-notes)
@@ -291,7 +291,7 @@ git fetch -p
 ### Output Unique Commits
 
 ```bash
-# Shows if commits are present in devBranch but NOT in main
+# Shows commits missing from main but present on devBranch
 git log main..devBranch
 ```
 

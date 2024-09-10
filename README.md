@@ -1,6 +1,6 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 2024-06-27
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 10 Sep 2024
 
 - [Web Development Resources](#web-development-resources)
   - [About The Project](#about-the-project)
@@ -17,6 +17,7 @@
     - [Markdown](#markdown)
     - [Math](#math)
     - [Terminal](#terminal)
+      - [Zsh Scripts](#zsh-scripts)
     - [Books](#books)
     - [Visual Studio Code](#visual-studio-code)
 
@@ -91,6 +92,10 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### Terminal
 
 1. [Mac Terminal Cheatsheet](Terminal/mac-terminal-cheatsheet.md)
+
+#### Zsh Scripts
+
+1. [Move All Files Recursively](Terminal/zsh-scripts/file-management/move_all_files_recursively.md)
 
 ### Books
 
