@@ -1,25 +1,27 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 10 Sep 2024
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 11 Oct 2024
 
-- [Web Development Resources](#web-development-resources)
-  - [About The Project](#about-the-project)
-  - [Usage](#usage)
-  - [Roadmap](#roadmap)
-  - [License](#license)
-  - [Contact](#contact)
-  - [Resource List](#resource-list)
-    - [CSS](#css)
-    - [Git](#git)
-    - [HTML](#html)
-    - [JavaScript](#javascript)
-      - [React](#react)
-    - [Markdown](#markdown)
-    - [Math](#math)
-    - [Terminal](#terminal)
-      - [Zsh Scripts](#zsh-scripts)
-    - [Books](#books)
-    - [Visual Studio Code](#visual-studio-code)
+-   [Web Development Resources](#web-development-resources)
+    -   [About The Project](#about-the-project)
+    -   [Usage](#usage)
+    -   [Roadmap](#roadmap)
+    -   [License](#license)
+    -   [Contact](#contact)
+    -   [Resource List](#resource-list)
+        -   [CSS](#css)
+        -   [Git](#git)
+        -   [HTML](#html)
+        -   [JavaScript](#javascript)
+            -   [React](#react)
+        -   [Markdown](#markdown)
+        -   [Math](#math)
+        -   [Terminal](#terminal)
+            -   [Zsh Scripts](#zsh-scripts)
+        -   [WordPress](#wordpress)
+            -   [Oxygen](#oxygen)
+        -   [Books](#books)
+        -   [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -96,6 +98,12 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 #### Zsh Scripts
 
 1. [Move All Files Recursively](Terminal/zsh-scripts/file-management/move_all_files_recursively.md)
+
+### WordPress
+
+#### Oxygen
+
+1. [Custom Icons in Oxygen](WordPress/Oxygen/custom-icons.md)
 
 ### Books
 
