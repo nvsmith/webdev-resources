@@ -1,6 +1,6 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 10 Sep 2024
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 11 Nov 2024
 
 -   [Git Cheatsheet](#git-cheatsheet)
     -   [General Notes](#general-notes)
@@ -19,7 +19,8 @@
     -   [Creating \& Modifying Branches](#creating--modifying-branches)
         -   [Rename An Existing Local Branch](#rename-an-existing-local-branch)
         -   [Create A New Branch](#create-a-new-branch)
-        -   [Clone A Repo](#clone-a-repo)
+        -   [Clone A Remote Repo (SSH)](#clone-a-remote-repo-ssh)
+        -   [Clone A Remote Repo Branch (SSH)](#clone-a-remote-repo-branch-ssh)
         -   [Rename a Remote Repo](#rename-a-remote-repo)
         -   [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
             -   [Fetch vs. Pull](#fetch-vs-pull)
@@ -235,17 +236,25 @@ git branch
 git checkout -b staging
 ```
 
-### Clone A Repo
+### Clone A Remote Repo (SSH)
 
 ```bash
-# Copy/paste repo from GitHub
-git clone <repo>
+# Copy/paste info from the "Clone" btn on GitHub: git@github.com:<userName>/<repoName>.git
+git clone git@github.com:nathanielvs/example-project.git
+
 
 # ??? NEEDS INSPECTION
 git checkout -b feature/modal origin/deploy
 
 # Push the feature/modal branch to remote origin
 git push origin feature/modal
+```
+
+### Clone A Remote Repo Branch (SSH)
+
+```bash
+# Copy/paste info from the "Clone" btn on GitHub: git@github.com:<userName>/<repoName>.git
+git clone -b branch-name git@github.com:nathanielvs/example-project.git
 ```
 
 ### Rename a Remote Repo

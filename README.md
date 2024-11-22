@@ -1,27 +1,28 @@
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 11 Oct 2024
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 22 Nov 2024
 
--   [Web Development Resources](#web-development-resources)
-    -   [About The Project](#about-the-project)
-    -   [Usage](#usage)
-    -   [Roadmap](#roadmap)
-    -   [License](#license)
-    -   [Contact](#contact)
-    -   [Resource List](#resource-list)
-        -   [CSS](#css)
-        -   [Git](#git)
-        -   [HTML](#html)
-        -   [JavaScript](#javascript)
-            -   [React](#react)
-        -   [Markdown](#markdown)
-        -   [Math](#math)
-        -   [Terminal](#terminal)
-            -   [Zsh Scripts](#zsh-scripts)
-        -   [WordPress](#wordpress)
-            -   [Oxygen](#oxygen)
-        -   [Books](#books)
-        -   [Visual Studio Code](#visual-studio-code)
+- [Web Development Resources](#web-development-resources)
+  - [About The Project](#about-the-project)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+  - [License](#license)
+  - [Contact](#contact)
+  - [Resource List](#resource-list)
+    - [CSS](#css)
+    - [Git](#git)
+    - [HTML](#html)
+    - [JavaScript](#javascript)
+      - [React](#react)
+      - [React Native](#react-native)
+    - [Markdown](#markdown)
+    - [Math](#math)
+    - [Terminal](#terminal)
+      - [Zsh Scripts](#zsh-scripts)
+    - [WordPress](#wordpress)
+      - [Oxygen](#oxygen)
+    - [Books](#books)
+    - [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -82,6 +83,10 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 1. [React Notes](JavaScript/React/react-notes.md)
 2. [Root File Templates](https://github.com/nvsmith/webdev-resources/tree/main/JavaScript/React/root-file-templates)
+
+#### React Native
+
+1. [React Native Notes](JavaScript/ReactNative/react-native-notes.md)
 
 ### Markdown
 
