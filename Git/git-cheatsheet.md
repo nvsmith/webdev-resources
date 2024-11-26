@@ -1,65 +1,81 @@
 # Git Cheatsheet
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 11 Nov 2024
+<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 26 Nov 2024
 
--   [Git Cheatsheet](#git-cheatsheet)
-    -   [General Notes](#general-notes)
-        -   [Best Practices](#best-practices)
-        -   [Comment Styles](#comment-styles)
-        -   [WordPress Usage](#wordpress-usage)
-    -   [Git Installation Or Upgrading](#git-installation-or-upgrading)
-    -   [Version Control Configuration](#version-control-configuration)
-        -   [Initialize Local Git Repo](#initialize-local-git-repo)
-        -   [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
-        -   [Set An Upstream (Remote) Branch](#set-an-upstream-remote-branch)
-    -   [Version Control Removal](#version-control-removal)
-        -   [Remove Local Git Tracking](#remove-local-git-tracking)
-        -   [Remove Remote Tracking](#remove-remote-tracking)
-    -   [View Branches](#view-branches)
-    -   [Creating \& Modifying Branches](#creating--modifying-branches)
-        -   [Rename An Existing Local Branch](#rename-an-existing-local-branch)
-        -   [Create A New Branch](#create-a-new-branch)
-        -   [Clone A Remote Repo (SSH)](#clone-a-remote-repo-ssh)
-        -   [Clone A Remote Repo Branch (SSH)](#clone-a-remote-repo-branch-ssh)
-        -   [Rename a Remote Repo](#rename-a-remote-repo)
-        -   [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
-            -   [Fetch vs. Pull](#fetch-vs-pull)
-    -   [Comparing Branches \& Commits](#comparing-branches--commits)
-        -   [Output Unique Commits](#output-unique-commits)
-        -   [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
-        -   [Compare Unique Commits](#compare-unique-commits)
-    -   [Merges \& Conflicts](#merges--conflicts)
-        -   [Merging Branches](#merging-branches)
-        -   [Merge Conflicts](#merge-conflicts)
-    -   [Scratch That: Reversing Changes \& Deleting Branches](#scratch-that-reversing-changes--deleting-branches)
-        -   [Undo/Ignore Simple File Changes](#undoignore-simple-file-changes)
-        -   [Undo/Ignore Changes To All Files](#undoignore-changes-to-all-files)
-        -   [Delete Local Branch](#delete-local-branch)
-        -   [Delete Remote Branch](#delete-remote-branch)
-    -   [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
-        -   [Rollback \& Reset Branches To Match One Another](#rollback--reset-branches-to-match-one-another)
-    -   [Hosting on GitHub Pages](#hosting-on-github-pages)
-        -   [GitHub Pages \& React](#github-pages--react)
+- [Git Cheatsheet](#git-cheatsheet)
+  - [General Notes](#general-notes)
+    - [Best Practices](#best-practices)
+    - [Comment Styles](#comment-styles)
+    - [WordPress Usage](#wordpress-usage)
+  - [Git Installation Or Upgrading](#git-installation-or-upgrading)
+  - [Common Git Options](#common-git-options)
+    - [General Commands:](#general-commands)
+    - [Branch Management](#branch-management)
+    - [Logging and Viewing](#logging-and-viewing)
+    - [Reset and Revert](#reset-and-revert)
+    - [Remote](#remote)
+    - [Miscellaneous](#miscellaneous)
+  - [Version Control Configuration](#version-control-configuration)
+    - [Initialize Local Git Repo](#initialize-local-git-repo)
+    - [Connect Local Repo To GitHub (Or A Remote Server)](#connect-local-repo-to-github-or-a-remote-server)
+    - [Set An Upstream (Remote) Branch](#set-an-upstream-remote-branch)
+  - [Version Control Removal](#version-control-removal)
+    - [Remove Local Git Tracking](#remove-local-git-tracking)
+    - [Remove Remote Tracking](#remove-remote-tracking)
+  - [View Branches](#view-branches)
+  - [Creating \& Modifying Branches](#creating--modifying-branches)
+    - [Rename An Existing Local Branch](#rename-an-existing-local-branch)
+    - [Create A New Branch](#create-a-new-branch)
+    - [Clone A Remote Repo (SSH)](#clone-a-remote-repo-ssh)
+    - [Clone A Remote Repo Branch (SSH)](#clone-a-remote-repo-branch-ssh)
+    - [Rename a Remote Repo](#rename-a-remote-repo)
+    - [Download Remote Files \& Commits to Local](#download-remote-files--commits-to-local)
+      - [Fetch vs. Pull](#fetch-vs-pull)
+  - [Comparing Branches \& Commits](#comparing-branches--commits)
+    - [Output Unique Commits](#output-unique-commits)
+    - [View Behind/Ahead Commit Count](#view-behindahead-commit-count)
+    - [Compare Unique Commits](#compare-unique-commits)
+  - [Merges \& Conflicts](#merges--conflicts)
+    - [Merging Branches](#merging-branches)
+    - [Merge Conflicts](#merge-conflicts)
+  - [Discard Changes \& Deleting Branches](#discard-changes--deleting-branches)
+    - [Undo/Ignore Simple File Changes](#undoignore-simple-file-changes)
+    - [Discard/Undo/Ignore Changes To All Files](#discardundoignore-changes-to-all-files)
+    - [Delete Local Branch](#delete-local-branch)
+    - [Delete Remote Branch](#delete-remote-branch)
+  - [Rolling Back The Clock: Revert, Amend, Rebase, Clean](#rolling-back-the-clock-revert-amend-rebase-clean)
+    - [Rollback \& Reset Branches To Match One Another](#rollback--reset-branches-to-match-one-another)
+  - [Hosting on GitHub Pages](#hosting-on-github-pages)
+    - [GitHub Pages \& React](#github-pages--react)
 
 <hr>
 
 ## General Notes
 
-In Git branching nomenclature, **main** and **master** are synonymous. This guide will use **main** to refer to the main/master branch (or trunk) of the development chain.
+In Git branching nomenclature, `main` and `master` are synonymous. This guide will use `main`.
 
 > ⚠️ Note: assume that codeblocks in this guide show an ordered sequence of steps to follow unless otherwise specified.
 
 ### Best Practices
 
--   ❌ Don't edit the **main** branch directly.
--   ✅ Always checkout a development branch before working on any code.
-    -   Once your code has been vetted, checkout your **main** branch and merge in your development branch.
+-   ❌ Don't edit the `main` branch directly.
+-   ✅ Always checkout another branch for your testing and development work: `git checkout development`
+-   Once your code has been vetted and you're ready to merge your changes:
+
+```bash
+# Checkout your main branch
+git checkout main
+
+# Merge your dev branch into main
+git merge development
+```
 
 ### Comment Styles
 
--   In general, write comments as present-tense imperatives:
-    -   ✅ "Center headings and fix typos"
-    -   ❌ "Heading placed in the center and typos corrected"
+In general, write comments as present-tense imperatives:
+
+-   ✅ "Center headings and fix typos"
+-   ❌ "Heading placed in the center and typos corrected"
 
 ### WordPress Usage
 
@@ -93,6 +109,58 @@ git --version
 # If necessary, overwrite any existing symlinks to the installed version of git
 brew link --overwrite git
 ```
+
+<br>
+
+## Common Git Options
+
+### General Commands:
+
+`-f` (force): Force the action (e.g., overwriting changes, deleting branches).
+
+`-d` (delete): Delete a branch.
+
+`-v` (verbose): Provide more details for certain commands.
+
+### Branch Management
+
+`-b` (branch): Create or switch to a branch.
+
+`-D` (delete force): Force delete a branch.
+
+### Logging and Viewing
+
+Press `q` after logging to quit and return to terminal entry.
+
+`--oneline`: Show each commit as a single line in logs.
+
+`--graph`: Show commits in a graphical structure.
+
+`-n`: Limit the number of commits to display.
+
+Staging and Files:
+
+`-a` (all): Add all modified and deleted files to the next commit.
+
+`-m` (message): Add a commit message.
+
+`--cached`: Work with files staged for commit but not yet committed.
+
+### Reset and Revert
+
+`--hard`: Reset changes and delete them permanently.
+
+`--soft`: Reset changes but keep them staged.
+
+### Remote
+
+`-u` (upstream): Set upstream tracking branch.
+
+### Miscellaneous
+
+`--amend`: Modify the most recent commit.
+
+`--squash`: Combine commits when merging branches.
 
 <br>
 
@@ -142,7 +210,7 @@ git remote -v
 > The `-u` tag in `git push -u origin main` is used to set the origin as the upstream remote in your git config. It is only needed the first time you push.
 >
 > -   `-u`: equivalent to `--set-upstream`
-> -   As you push with the `-u` tag option, the local branch (**main**) is linked to the remote server (**origin**) automatically with a matching branch name **(main)**.
+> -   As you push with the `-u` tag option, the local branch (`main`) is linked to the remote server (**origin**) automatically with a matching branch name **(main)**.
 
 View more about Remotes at [Git Basics - Working with Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 
@@ -240,7 +308,7 @@ git checkout -b staging
 
 ```bash
 # Copy/paste info from the "Clone" btn on GitHub: git@github.com:<userName>/<repoName>.git
-git clone git@github.com:nathanielvs/example-project.git
+git clone git@github.com:userName/example-project.git
 
 
 # ??? NEEDS INSPECTION
@@ -254,7 +322,7 @@ git push origin feature/modal
 
 ```bash
 # Copy/paste info from the "Clone" btn on GitHub: git@github.com:<userName>/<repoName>.git
-git clone -b branch-name git@github.com:nathanielvs/example-project.git
+git clone -b branch-name git@github.com:userName/example-project.git
 ```
 
 ### Rename a Remote Repo
@@ -338,7 +406,7 @@ git rev-list --left-right --pretty=oneline main...devBranch
 
 ### Merging Branches
 
-> When merging, you checkout the trunk (e.g. **main**) and merge in the development branch (e.g. **staging, feature/modal, bugfix, etc**).
+> When merging, you checkout the trunk (e.g. `main`) and merge in the development branch (e.g. **staging, feature/modal, bugfix, etc**).
 
 ```bash
 # Checkout the trunk
@@ -358,7 +426,7 @@ git push origin main
 
 > Perform merge conflict housekeeping in your text editor.
 >
-> -   HEAD points to the current, checked out branch (usually **main** when you're doing merges).
+> -   HEAD points to the current, checked out branch (usually `main` when you're doing merges).
 > -   The`checkout` operation moves the HEAD pointer to the specified commit (i.e. a branch name or a git log ID hash).
 
 ```bash
@@ -387,7 +455,7 @@ git push origin main
 
 <br>
 
-## Scratch That: Reversing Changes & Deleting Branches
+## Discard Changes & Deleting Branches
 
 ### Undo/Ignore Simple File Changes
 
@@ -396,11 +464,14 @@ git push origin main
 git checkout -- filename.abc
 ```
 
-### Undo/Ignore Changes To All Files
+### Discard/Undo/Ignore Changes To All Files
 
 ```bash
 # Discard all file changes & revert everything to prior commit
 git checkout .
+
+# Remove untracked directories
+git clean -fd
 ```
 
 ### Delete Local Branch
