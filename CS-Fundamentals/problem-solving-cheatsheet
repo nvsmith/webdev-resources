@@ -1,0 +1,143 @@
+# Programming Problem-Solving Cheat Sheet
+
+<a href="https://outpostwebstudio.com" target="_blank" rel="author">Outpost Web Studio</a> | Last Updated: 21 Feb 2025
+
+---
+
+---
+
+- [Programming Problem-Solving Cheat Sheet](#programming-problem-solving-cheat-sheet)
+  - [1. Understand the Problem](#1-understand-the-problem)
+  - [2. Break It Down (Decomposition)](#2-break-it-down-decomposition)
+  - [3. Abstraction](#3-abstraction)
+  - [4. Plan a Strategy (Algorithm Design)](#4-plan-a-strategy-algorithm-design)
+  - [5. Implement Step by Step](#5-implement-step-by-step)
+  - [6. Test \& Debug](#6-test--debug)
+  - [7. Refine \& Optimize](#7-refine--optimize)
+  - [8. Reflect \& Learn](#8-reflect--learn)
+
+## 1. Understand the Problem
+
+-   Read the problem carefully.
+-   Identify inputs, outputs, constraints, and edge cases.
+-   Rephrase the problem in your own words.
+-   Ask: _What is being asked? What do I need to accomplish?_
+
+Example:  
+ _Problem_: "Write a function that takes an array of numbers and returns the sum."  
+ _Rephrased_: "I need to loop through an array, add up the numbers, and return the total."
+
+## 2. Break It Down (Decomposition)
+
+-   Divide the problem into smaller, manageable parts.
+-   Solve each part separately before integrating.
+-   Write down logical steps before coding.
+
+Example:  
+ Steps to sum an array:
+
+1. Create a function.
+2. Initialize a variable to hold the sum.
+3. Loop through the array, adding each number to the sum.
+4. Return the sum.
+
+## 3. Abstraction
+
+-   Identify patterns or general principles that can simplify the solution.
+-   Focus only on essential details, removing distractions.
+-   Think in terms of functions, reusable code, and modular components.
+
+Example:  
+ Instead of writing a specific function for summing an array, make it general:
+
+```js
+function sumArray(arr) {
+    return arr.reduce((acc, num) => acc + num, 0);
+}
+```
+
+_This function works for any array, not just a specific one._
+
+## 4. Plan a Strategy (Algorithm Design)
+
+-   Choose an approach (e.g., brute force, recursion, dynamic programming).
+-   Select appropriate data structures (arrays, objects, maps, sets).
+-   Consider performance: _Is my approach efficient?_
+
+Example:  
+ _Problem_: "Find the largest number in an array."  
+ _Strategy_:
+
+-   Use a loop to track the highest number seen so far (efficient).
+-   Avoid sorting the array first (unnecessary extra work).
+
+```js
+function findMax(arr) {
+    let max = arr[0];
+    for (let num of arr) {
+        if (num > max) max = num;
+    }
+    return max;
+}
+```
+
+## 5. Implement Step by Step
+
+-   Code one part at a time, testing each section before moving on.
+-   Use clear, structured, and readable code.
+-   Name variables and functions meaningfully.
+
+Example:  
+ Implement a palindrome checker in steps:
+
+```js
+function isPalindrome(str) {
+    let reversed = str.split("").reverse().join("");
+    return str === reversed;
+}
+```
+
+_Built step by step: split the string, reverse it, join it, compare._
+
+## 6. Test & Debug
+
+-   Run test cases, including edge cases and unexpected inputs.
+-   Use `console.log()` or debugging tools to trace errors.
+-   Verify that output matches expectations.
+
+Example:  
+ _Testing our `isPalindrome` function:_
+
+```js
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+console.log(isPalindrome("A man a plan a canal Panama")); // false (case-sensitive)
+```
+
+## 7. Refine & Optimize
+
+-   Improve efficiency (reduce loops, use better data structures).
+-   Eliminate redundant code and enhance readability.
+-   Consider alternative solutions and best practices.
+
+Example:  
+ Optimizing `findMax()` using `Math.max()` instead of a loop:
+
+```js
+function findMax(arr) {
+    return Math.max(...arr);
+}
+```
+
+_Cleaner and faster than a manual loop._
+
+## 8. Reflect & Learn
+
+-   Ask: _What worked well? What was challenging?_
+-   Identify knowledge gaps and research solutions.
+-   Practice similar problems to reinforce understanding.
+
+Example:
+
+-   _I struggled with recursion._ → Research and solve factorial, Fibonacci, and tree traversal problems.
+-   _I forgot how `reduce()` works._ → Practice by rewriting sum and max functions with `reduce()`.
