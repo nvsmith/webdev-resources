@@ -1,0 +1,96 @@
+# HOW TO IMPLEMENT THIS FILE WITH YOUR PROJECT:
+# 1. Rename this file to .gitignore 
+# 2. Place this file in your root of your WordPress site BEFORE you initialize git: yourProjectName/app/public
+# 3. Do a search and replace for all instances of `yourProjectName` in this file.
+# 4. Search for any comments marked `###` for special notes.
+# 5. Add any other files/directories to this document that you DON'T want tracked.
+# 6. Remove any other files/directories from this template that you DO want tracked.
+# 7. Delete this comment section if you'd like, update the date below, and save.
+
+# ─────────────────────────────────────────────
+
+# .gitignore Template — WordPress (Oxygen + WooCommerce)
+
+# Last updated: 04 JUN 2025
+
+# Tracks only custom code and Oxygen exports; excludes WordPress core, cache, uploads, logs, and vendor files
+
+# ─────────────────────────────────────────────
+
+# Sensitive configuration files
+wp-config.php
+wp-config-local.php
+wp-config-production.php
+.htaccess
+.env
+
+
+# Cache, logs, temp, and backup files
+*.log
+*.sql
+*.zip
+*.tar.gz
+*.bak
+*.tmp
+wp-content/cache/**
+wp-content/debug.log
+
+
+# Dependency directories
+node_modules/**
+vendor/**
+
+
+# System / editor / OS files
+.DS_Store
+Thumbs.db
+.idea/**
+.vscode/**
+
+
+# Uploads — ignore everything except Oxygen builder exports
+wp-content/uploads/**
+!wp-content/uploads/oxygen/
+
+
+# Plugins — ignore all except custom plugins
+wp-content/plugins/**
+!wp-content/plugins/inkandintent-core/**
+
+
+# WordPress core directories
+wp-admin/**
+wp-includes/**
+wp-content/upgrade/**
+wp-content/upgrade-temp-backup/**
+wp-content/languages/**
+
+# Themes — (optional: ignore all except custom themes)
+wp-content/themes/**
+!wp-content/themes/inkandintent/**
+
+
+# WordPress root/core files
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+
+# (Optional) Local by Flywheel / WP Engine config — ignore if Git repo is in site root
+sql/**
+conf/**
+logs/**
+local-site.json
