@@ -1,6 +1,6 @@
 # HOW TO IMPLEMENT THIS FILE WITH YOUR PROJECT:
 # 1. Rename this file to .gitignore 
-# 2. Place this file in your root of your WordPress site BEFORE you initialize git: yourProjectName/app/public
+# 2. Place this file in your `public` root of your WordPress site BEFORE you initialize git: yourProjectName/app/public
 # 3. Do a search and replace for all instances of `yourProjectName` in this file.
 # 4. Search for any comments marked `###` for special notes.
 # 5. Add any other files/directories to this document that you DON'T want tracked.
@@ -9,21 +9,17 @@
 
 # ─────────────────────────────────────────────
 
-# .gitignore Template — WordPress (Oxygen + WooCommerce)
+# Last updated: 05 JUN 2025
+# For WordPress sites built with Oxygen & WooCommerce
 
-# Last updated: 04 JUN 2025
+# Tracks only custom code (plugins, themes, & Oxygen exports/uploads)
 
-# Tracks only custom code and Oxygen exports; excludes WordPress core, cache, uploads, logs, and vendor files
+# Excludes files & directories for:
+# backup, cache, config, dependency, editor, logs, OS, remote, system, temp
+
+# Excludes WordPress core
 
 # ─────────────────────────────────────────────
-
-# Sensitive configuration files
-wp-config.php
-wp-config-local.php
-wp-config-production.php
-.htaccess
-.env
-
 
 # Cache, logs, temp, and backup files
 *.log
@@ -41,38 +37,75 @@ node_modules/**
 vendor/**
 
 
-# System / editor / OS files
+# System / editor / remote / OS files
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
 .DS_Store
-Thumbs.db
+.fseventsd
 .idea/**
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
 .vscode/**
+Desktop.ini
+Network Trash Folder
+Temporary Items
+Thumbs.db
 
+# (Optional) Local by Flywheel / WP Engine config — ignore if Git repo is in site root
+sql/**
+conf/**
+logs/**
+local-site.json
 
-# Uploads — ignore everything except Oxygen builder exports
-wp-content/uploads/**
-!wp-content/uploads/oxygen/
+# ─────────────────────────────────────────────
+# WordPress | Oxygen & WooCommerce
+# ─────────────────────────────────────────────
 
-
-# Plugins — ignore all except custom plugins
-wp-content/plugins/**
-!wp-content/plugins/inkandintent-core/**
+# Sensitive configuration files
+.env*
+.htaccess
+wp-config.php
+wp-config-local.php
+wp-config-production.php
 
 
 # WordPress core directories
-wp-admin/**
-wp-includes/**
-wp-content/upgrade/**
-wp-content/upgrade-temp-backup/**
-wp-content/languages/**
+wp-admin/*
+wp-content/languages/*
+wp-content/plugins/*
+wp-content/themes/*
+wp-content/upgrade/*
+wp-content/upgrade-temp-backup/*
+wp-content/uploads/*
+wp-includes/*
 
-# Themes — (optional: ignore all except custom themes)
-wp-content/themes/**
-!wp-content/themes/inkandintent/**
+### DON'T ignore custom-made plugins
+!wp-content/plugins/
+!wp-content/plugins/yourProjectName-core/
+!wp-content/plugins/yourProjectName-core/**
 
+### DON'T ignore custom-made themes
+!wp-content/themes/
+!wp-content/themes/yourProjectName/
+!wp-content/themes/yourProjectName/**
+
+# DON'T ignore Oxygen Builder uploads
+!wp-content/uploads/
+!wp-content/uploads/oxygen/
+!wp-content/uploads/oxygen/**
 
 # WordPress root/core files
 index.php
 license.txt
+local-xdebuginfo.php
 readme.html
 wp-activate.php
 wp-blog-header.php
@@ -87,10 +120,3 @@ wp-settings.php
 wp-signup.php
 wp-trackback.php
 xmlrpc.php
-
-
-# (Optional) Local by Flywheel / WP Engine config — ignore if Git repo is in site root
-sql/**
-conf/**
-logs/**
-local-site.json

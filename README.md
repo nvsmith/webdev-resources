@@ -2,27 +2,27 @@
 
 <a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 22 Nov 2024
 
-- [Web Development Resources](#web-development-resources)
-  - [About The Project](#about-the-project)
-  - [Usage](#usage)
-  - [Roadmap](#roadmap)
-  - [License](#license)
-  - [Contact](#contact)
-  - [Resource List](#resource-list)
-    - [CSS](#css)
-    - [Git](#git)
-    - [HTML](#html)
-    - [JavaScript](#javascript)
-      - [React](#react)
-      - [React Native](#react-native)
-    - [Markdown](#markdown)
-    - [Math](#math)
-    - [Terminal](#terminal)
-      - [Zsh Scripts](#zsh-scripts)
-    - [WordPress](#wordpress)
-      - [Oxygen](#oxygen)
-    - [Books](#books)
-    - [Visual Studio Code](#visual-studio-code)
+-   [Web Development Resources](#web-development-resources)
+    -   [About The Project](#about-the-project)
+    -   [Usage](#usage)
+    -   [Roadmap](#roadmap)
+    -   [License](#license)
+    -   [Contact](#contact)
+    -   [Resource List](#resource-list)
+        -   [CSS](#css)
+        -   [Git](#git)
+        -   [HTML](#html)
+        -   [JavaScript](#javascript)
+            -   [React](#react)
+            -   [React Native](#react-native)
+        -   [Markdown](#markdown)
+        -   [Math](#math)
+        -   [Terminal](#terminal)
+            -   [Zsh Scripts](#zsh-scripts)
+        -   [WordPress](#wordpress)
+            -   [Oxygen](#oxygen)
+        -   [Books](#books)
+        -   [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -66,9 +66,12 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 
 ### Git
 
-1. [Git Cheatsheet](Git/git-cheatsheet.md)
-2. [Git Ignore Template](Git/gitignore-template.txt)
-3. [React For GitHub Pages](Git/react-for-github-pages.md)
+1. [Conventional Commit Types For Git](Git/conventional-commit-types.md)
+2. [Git Cheatsheet](Git/git-cheatsheet.md)
+3. [Git Ignore Template - WordPress - Oxygen & WooCommerce](Git/gitignore-template_wordpress-oxygen-woo.txt)
+4. [Git Ignore Template](Git/gitignore-template.txt)
+5. [React For GitHub Pages](Git/react-for-github-pages.md)
+6.
 
 ### HTML
 
