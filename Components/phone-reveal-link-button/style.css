@@ -1,0 +1,16 @@
+.btn {
+    display: block;
+    max-width: 450px;
+    height: 4rem;
+    margin: 0 1rem;
+    padding: 1rem 3rem;
+    border: 1px solid #033c54;
+    border-radius: 50px;
+    color: #033c54;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 9px 3px #000000;
+}

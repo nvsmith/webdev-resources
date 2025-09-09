@@ -1,14 +1,18 @@
+<a id="readme-top"></a>
+
 # Web Development Resources
 
-<a href="https://tecnate.dev" target="_blank" rel="author">Tecnate</a> | Last Updated: 22 Nov 2024
+**Author**: Nate @ [Outpost Web Studio](https://outpostwebstudio.com/) | [Everyday Computer Help](https://everydaycomputerhelp.com/) | [GitHub](https://github.com/nvsmith)
+
+**Last Updated**: 08 SEP 2025
 
 -   [Web Development Resources](#web-development-resources)
     -   [About The Project](#about-the-project)
     -   [Usage](#usage)
     -   [Roadmap](#roadmap)
     -   [License](#license)
-    -   [Contact](#contact)
     -   [Resource List](#resource-list)
+        -   [Components](#components)
         -   [CSS](#css)
         -   [Git](#git)
         -   [HTML](#html)
@@ -28,7 +32,7 @@
 
 ## About The Project
 
-This is a documentation repository for my tech notes, templates, and other resources that I've accumulated and developed over the years as a web developer. It's like a one-stop-shop for all the tools and examples that I find myself continually reaching for when I'm building or troubleshooting a project.
+This is a documentation repository for my tech notes, templates, reusable component code, and other resources that I've accumulated and developed over the years. These are the tools, resources, and examples that I find myself continually reaching for when I'm building a project.
 
 <br>
 
@@ -50,13 +54,11 @@ Distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 <br>
 
-## Contact
-
-Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/profile/intra) | [Tecnate](https://tecnate.dev)
-
-<br>
-
 ## Resource List
+
+### Components
+
+1. [Phone Reveal Link Button](Components/phone-reveal-link-button/README.md)
 
 ### CSS
 
@@ -71,7 +73,6 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 3. [Git Ignore Template - WordPress - Oxygen & WooCommerce](Git/gitignore-template_wordpress-oxygen-woo.txt)
 4. [Git Ignore Template](Git/gitignore-template.txt)
 5. [React For GitHub Pages](Git/react-for-github-pages.md)
-6.
 
 ### HTML
 
@@ -120,3 +121,5 @@ Nate: [GitHub](https://github.com/nvsmith) | [Grepper](https://www.grepper.com/p
 ### Visual Studio Code
 
 1. [VSCode Shortcuts for Mac OS](vscode-shortcuts.md)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
