@@ -58,7 +58,7 @@ Distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ### Components
 
-1. [Phone Reveal Link Button](Components/phone-reveal-link-button/README.md)
+1. [Phone Reveal Link Button](Components/phone-reveal-link-button)
 
 ### CSS
 
