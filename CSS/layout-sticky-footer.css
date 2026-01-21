@@ -1,0 +1,37 @@
+/* --------------------------------------------------
+Sticky Footer: General Purpose
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Ensure the parent flex container fills the viewport */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push footer to the bottom */
+footer {
+    margin-top: auto;
+}
+
+/* --------------------------------------------------
+Sticky Footer: Oxygen Builder
+If the footer is nested inside an inner content element, 
+target the .ct-inner-content instead of <body>
+-------------------------------------------------- */
+
+/* Ensure the parent flex container fills the viewport */
+.ct-inner-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push footer to the bottom */
+footer {
+    margin-top: auto;
+}
