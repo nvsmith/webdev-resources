@@ -4,29 +4,30 @@
 
 **Author**: Nate @ [Outpost Web Studio](https://outpostwebstudio.com/) | [Everyday Computer Help](https://everydaycomputerhelp.com/) | [GitHub](https://github.com/nvsmith)
 
-**Last Updated**: 08 SEP 2025
+**Last Updated**: 21 JAN 2026
 
--   [Web Development Resources](#web-development-resources)
-    -   [About The Project](#about-the-project)
-    -   [Usage](#usage)
-    -   [Roadmap](#roadmap)
-    -   [License](#license)
-    -   [Resource List](#resource-list)
-        -   [Components](#components)
-        -   [CSS](#css)
-        -   [Git](#git)
-        -   [HTML](#html)
-        -   [JavaScript](#javascript)
-            -   [React](#react)
-            -   [React Native](#react-native)
-        -   [Markdown](#markdown)
-        -   [Math](#math)
-        -   [Terminal](#terminal)
-            -   [Zsh Scripts](#zsh-scripts)
-        -   [WordPress](#wordpress)
-            -   [Oxygen](#oxygen)
-        -   [Books](#books)
-        -   [Visual Studio Code](#visual-studio-code)
+- [Web Development Resources](#web-development-resources)
+    - [About The Project](#about-the-project)
+    - [Usage](#usage)
+    - [Roadmap](#roadmap)
+    - [License](#license)
+    - [Resource List](#resource-list)
+        - [Components](#components)
+        - [CSS](#css)
+        - [Git](#git)
+        - [HTML](#html)
+        - [JavaScript](#javascript)
+            - [React](#react)
+            - [React Native](#react-native)
+        - [Markdown](#markdown)
+        - [Math](#math)
+        - [Terminal](#terminal)
+            - [Zsh Scripts](#zsh-scripts)
+        - [WordPress](#wordpress)
+            - [Oxygen](#oxygen)
+            - [WP-Core](#wp-core)
+        - [Books](#books)
+        - [Visual Studio Code](#visual-studio-code)
 
 <br>
 
@@ -62,9 +63,10 @@ Distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ### CSS
 
-1. [Bootstrap for Oxygen](CSS/bootstrap-oxygen.css)
-2. [Responsive Font Sizing](CSS/responsive-font-sizing.css)
-3. [Tecnate Web Solutions - Default Styles](CSS/tecnate-default-style.css)
+1. [Default Styles - Tecnate](CSS/default-styles-tecnate.css)
+2. [Layout - Bootstrap for Oxygen](CSS/bootstrap-oxygen.css)
+3. [Layout - Sticky Footer](CSS/layout-sticky-footer.css)
+4. [Text - Responsive Font Sizing](CSS/text-responsive-font-sizing.css)
 
 ### Git
 
@@ -113,6 +115,10 @@ Distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
 #### Oxygen
 
 1. [Custom Icons in Oxygen](WordPress/Oxygen/custom-icons.md)
+
+#### WP-Core
+
+1. [WP Localhost Redirect Fix](WordPress/WP-Core/wp-localhost-redirect-fix.md)
 
 ### Books
 
